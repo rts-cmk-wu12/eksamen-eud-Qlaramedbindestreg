@@ -1,0 +1,110 @@
+@import "./utils/variables";
+
+.home__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+
+    .search__wrapper {
+        position: relative;
+        margin-bottom: 2rem;
+
+        input[type="search"] {
+            width: 100%;
+            padding: 0.75rem 2.5rem 0.75rem 1rem;
+            border: 1px solid $grey-color;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+
+        }
+        .search__icon {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: $grey-color;
+            font-size: 1.25rem;
+        }
+
+    }
+    .listing__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+
+        .listing__card {
+            border: 1px solid $grey-color;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            transition: box-shadow 0.2s ease;
+
+            &:hover {
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            }
+            .listing__image {
+              width: 100%;
+              height: 180px;
+              object-fit: cover;
+            }
+            .listing__content {
+                  padding: 1rem;
+                h2 {
+                    font-size: 1.125rem;
+                    font-weight: 600;
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+
+    .pagination__wrapper {
+        display: flex;
+        justify-content: center;
+
+        .pagination {
+            display: flex;
+            color: $primary-color;
+         
+
+            li {
+                &.active a {
+
+                   color: $primary-color;
+
+                
+                }
+           .break {
+            display: none;
+           }
+        a {
+            padding: 0.5rem 0.75rem;
+       
+            border-radius: 0.5rem;
+            cursor: pointer;
+            text-decoration: none;
+            color: $primary-color;
+
+            &:hover {
+                background-color: $primary-color;
+                color: #fff;
+            }
+        }
+            }
+     
+    .previous,
+    .next {
+        a {
+    
+            border: none;
+               &:hover {
+                color: $grey-color;
+                background-color: white;
+            
+            }
+        }
+    }
+    
+}
+   }
+    }
