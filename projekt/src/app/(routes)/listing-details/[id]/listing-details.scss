@@ -1,0 +1,58 @@
+@import "../../../utils/variables";
+
+.details__container {
+    max-width: 1200px;
+  
+    margin: 2rem auto;
+    padding: 1rem;
+
+    .details__grid {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+
+        .details__image-wrapper {
+            flex: 1 1 400px;
+            min-width: 300px;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+
+        }
+        .details__image {
+            object-fit: cover;
+        }
+
+        .details__content {
+            flex: 1 1 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1rem;
+            h1 {
+                font-size: 2rem;
+                color: $primary-color;
+                margin: 0;
+            }
+            p {
+                font-size: 1rem;
+                line-height: 1.5rem;
+                color: #333;
+            }
+            .swap-button {
+            padding: 0.25rem 0.75rem;
+            border: 1px solid $primary-color;
+            background-color: $button-color;
+            border-radius: 4px;
+            text-decoration: none;
+            color: inherit;
+            max-width: 30%;
+
+             &:hover {
+                background-color: $hover-color;
+            }
+            }
+
+        }
+    }
+}

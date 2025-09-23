@@ -1,7 +1,7 @@
-# Dokumentation for iPlayMusic
+# Dokumentation for SwapHub
 Clara Qvist-Richards WU12
 
-Jeg har lavet valgfri opgave 
+Jeg har lavet valgfri opgave C
 
 ## Tech-stack (med forklaringer)
 * Next.js
@@ -9,14 +9,26 @@ Jeg har lavet valgfri opgave
 * Git
 * React-icons
 * SASS
-* Landrup Dans API
+* SwapHub API
 * Zod
 * react-paginate
 
+
 ### Kom igang
-npm i 
-npm i sass react-icons
+* For at starte projekt
+cd projekt
+npm install
+npm i --save-dev sass
+npm i react-icons 
+npm i react-paginate --save 
+npm i --save react-toastify
+npm i zod
 npm run dev
+
+* For at starte api
+cd api
+npm install
+npm start
 
 
 #### Kode-eksempel

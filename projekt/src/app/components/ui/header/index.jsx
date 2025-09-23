@@ -1,8 +1,15 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import "./header.scss";
+import SignOutButton from "../signout-button";
+import { FiUser } from "react-icons/fi"
 
-export default function Header() {
+
+export default function Header({ user }) {
+   
+
     return (
         <>
         <header className="header">
@@ -21,7 +28,7 @@ export default function Header() {
            <nav className="header__nav">
                <ul>
                 <li>
-                    <Link href="/listings">Listings</Link>
+                    <Link href="/">Listings</Link>
                 </li>
                   <li>
                     <Link href="/community">Community</Link>
@@ -31,14 +38,24 @@ export default function Header() {
                 </li>
                </ul>
            </nav>
+           
+           <Link
+           href="/profile" className="profile__link">
+            <FiUser size={24}></FiUser>
+            <span>Profile</span>
+           </Link>
 
            <div className="header__button">
+            {user ? (
+                <SignOutButton></SignOutButton>
+            ) : (
             <Link
             href="/signin"
             className="header__signin"
             >
                 Sign in
             </Link>
+)}
            </div>
            </div>
         </header>

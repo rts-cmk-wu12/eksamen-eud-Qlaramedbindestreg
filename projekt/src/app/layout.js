@@ -2,6 +2,7 @@ import Footer from "./components/ui/footer";
 import Header from "./components/ui/header";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import { cookies } from "next/headers";
 
 const interSans = Inter({
   variable: "--font-inter-sans",
@@ -15,10 +16,14 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+   const cookieStore = cookies();
+   const token = cookieStore.get("sh_token");
+
+   const user = token ? { token: token.value } : null;
   return (
     <html lang="en">
       <body className={`${interSans.variable}`}>
-        <Header></Header>
+        <Header use={user}></Header>
         {children}
         <Footer></Footer>
       </body>
