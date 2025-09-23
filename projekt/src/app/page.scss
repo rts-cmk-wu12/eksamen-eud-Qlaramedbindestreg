@@ -7,14 +7,15 @@
 
     .search__wrapper {
         position: relative;
+        width: 30%;
         margin-bottom: 2rem;
 
         input[type="search"] {
             width: 100%;
-            padding: 0.75rem 2.5rem 0.75rem 1rem;
+            padding: 0.5rem 2rem 0.5rem 1rem;
             border: 1px solid $grey-color;
-            border-radius: 0.5rem;
-            font-size: 1rem;
+            border-radius: 1.5rem;
+            font-size: small;
 
         }
         .search__icon {
@@ -38,24 +39,34 @@
             border-radius: 0.75rem;
             overflow: hidden;
             transition: box-shadow 0.2s ease;
+            padding: 1rem;
 
             &:hover {
                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             }
+            .listing__image-wrapper {
+                position: relative;
+                width: 100%;
+                padding: 0.5rem;
+                height: 300px;
+                box-sizing: border-box;
+            }
             .listing__image {
-              width: 100%;
-              height: 180px;
-              object-fit: cover;
+              
+        object-fit: cover;
+       
+             
             }
             .listing__content {
-                  padding: 1rem;
+                  padding: 0.5rem;
                 h2 {
                     font-size: 1.125rem;
                     font-weight: 600;
                     color: $primary-color;
                 }
             }
-        }
+        
+    }
     }
 
     .pagination__wrapper {

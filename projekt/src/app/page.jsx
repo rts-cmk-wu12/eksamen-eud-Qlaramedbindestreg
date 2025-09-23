@@ -7,6 +7,7 @@ import "./page.scss";
 import { FiSearch } from "react-icons/fi"
 import ReactPaginate from "react-paginate";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
  const [listings, setListings] = useState([]);
@@ -49,17 +50,19 @@ export default function Home() {
           <div className="listing__grid">
             {currentListings.map(listing => (
               <div key={listing.id} className="listing__card">
+                <Link href={`/listing-details/${listing.id}`}>
+                <div className="listing__image-wrapper">
                 <Image
                   src={listing.asset?.url || "/placeholder.jpg"}
                   alt={listing.title}
-                  width={300}
-                  height={200}
-                  
+                  fill
                   className="listing__image"
                 ></Image>
+                  </div>
                 <div className="listing__content">
                   <h2>{listing.title}</h2>
                 </div>
+                </Link>
               </div>
             ))}
           </div>
