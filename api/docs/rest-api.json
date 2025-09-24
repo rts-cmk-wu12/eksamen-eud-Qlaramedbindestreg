@@ -1,1 +1,676 @@
-{"_type":"export","__export_format":4,"__export_date":"2025-09-21T20:55:15.216Z","__export_source":"insomnia.desktop.app:v2023.2.0","resources":[{"_id":"req_7e5658a7636844f1a75774b284c46142","parentId":"fld_70aeaab813994dfb893120f64c0c5190","modified":1758487464611,"created":1758486646051,"url":"{{ _.baseUrl }}/requests","name":"Create a user request","description":"","method":"POST","body":{"mimeType":"application/json","text":"{\n\t\"userid\": 1,\n\t\"requestItem\": 6,\n\t\"offerItem\": 1\n}"},"parameters":[],"headers":[{"name":"Content-Type","value":"application/json"}],"authentication":{"type":"bearer","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxMCwiZW1haWwiOiJwcml5YS5wYXRlbEBzd2FwaHViLnRlc3QiLCJwYXNzd29yZCI6IiQyYSQxNSRqUWo5S3E2QW94MFI0TXNNMlcxbHJlOFc1TWpKN1dmNHg5Z0xCbG81clJ1ai5iVGZtMEZXcSIsImZpcnN0bmFtZSI6IlByaXlhIiwibGFzdG5hbWUiOiJQYXRlbCIsImNyZWF0ZWRBdCI6IjIwMjUtMDktMjFUMjA6MDI6MzUuMzI3WiIsInVwZGF0ZWRBdCI6IjIwMjUtMDktMjFUMjA6MDI6MzUuMzI3WiJ9LCJpYXQiOjE3NTg0ODQ5ODgsImV4cCI6MTc1ODQ4ODU4OH0.U9i0fmwwQ2d3yaZl7OJ_hBIHVA5spNoHCCSiKaPJyBI","prefix":"Bearer"},"metaSortKey":-1758486646051,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"fld_70aeaab813994dfb893120f64c0c5190","parentId":"fld_5cbb316fdbab442f9a7582aadb49001e","modified":1758486644645,"created":1758486644645,"name":"Requests","description":"","environment":{},"environmentPropertyOrder":null,"metaSortKey":-1758486644645,"_type":"request_group"},{"_id":"fld_5cbb316fdbab442f9a7582aadb49001e","parentId":"fld_b3021e78c1cd4a29a61ff2c9ba37f35d","modified":1758472496616,"created":1758472493345,"name":"V1","description":"","environment":{},"environmentPropertyOrder":null,"metaSortKey":-1758472493345,"_type":"request_group"},{"_id":"fld_b3021e78c1cd4a29a61ff2c9ba37f35d","parentId":"wrk_a4e59e40860b45c2902a4303e7b067c8","modified":1758472487622,"created":1758472487622,"name":"API","description":"","environment":{},"environmentPropertyOrder":null,"metaSortKey":-1758472487622,"_type":"request_group"},{"_id":"wrk_a4e59e40860b45c2902a4303e7b067c8","parentId":null,"modified":1758472470838,"created":1758472470838,"name":"SwapHub","description":"","scope":"collection","_type":"workspace"},{"_id":"req_98af9a4ec346492096884f37e884f986","parentId":"fld_70aeaab813994dfb893120f64c0c5190","modified":1758487759563,"created":1758487739360,"url":"{{ _.baseUrl }}/requests","name":"List all user requests","description":"","method":"GET","body":{},"parameters":[],"headers":[],"authentication":{},"metaSortKey":-1758486646026,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_b45b45c7a4524fc99771d0f5bf4992b2","parentId":"fld_70aeaab813994dfb893120f64c0c5190","modified":1758487565223,"created":1758487468576,"url":"{{ _.baseUrl }}/requests/1","name":"List all user requests by user ID","description":"","method":"GET","body":{},"parameters":[],"headers":[],"authentication":{"type":"bearer","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxMCwiZW1haWwiOiJwcml5YS5wYXRlbEBzd2FwaHViLnRlc3QiLCJwYXNzd29yZCI6IiQyYSQxNSRqUWo5S3E2QW94MFI0TXNNMlcxbHJlOFc1TWpKN1dmNHg5Z0xCbG81clJ1ai5iVGZtMEZXcSIsImZpcnN0bmFtZSI6IlByaXlhIiwibGFzdG5hbWUiOiJQYXRlbCIsImNyZWF0ZWRBdCI6IjIwMjUtMDktMjFUMjA6MDI6MzUuMzI3WiIsInVwZGF0ZWRBdCI6IjIwMjUtMDktMjFUMjA6MDI6MzUuMzI3WiJ9LCJpYXQiOjE3NTg0ODcwMjksImV4cCI6MTc1ODQ5MDYyOX0.IpzT0cOoQrBY71_8EED6YpXlCIwiCUXNpMDMNhKinkQ","prefix":"Bearer"},"metaSortKey":-1758486646001,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_959220caafa449b5a61bc4ea75e4da64","parentId":"fld_70aeaab813994dfb893120f64c0c5190","modified":1758487639245,"created":1758487573000,"url":"{{ _.baseUrl }}/requests/1","name":"Delete a user request by request ID","description":"","method":"DELETE","body":{},"parameters":[],"headers":[],"authentication":{"type":"bearer","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxMCwiZW1haWwiOiJwcml5YS5wYXRlbEBzd2FwaHViLnRlc3QiLCJwYXNzd29yZCI6IiQyYSQxNSRqUWo5S3E2QW94MFI0TXNNMlcxbHJlOFc1TWpKN1dmNHg5Z0xCbG81clJ1ai5iVGZtMEZXcSIsImZpcnN0bmFtZSI6IlByaXlhIiwibGFzdG5hbWUiOiJQYXRlbCIsImNyZWF0ZWRBdCI6IjIwMjUtMDktMjFUMjA6MDI6MzUuMzI3WiIsInVwZGF0ZWRBdCI6IjIwMjUtMDktMjFUMjA6MDI6MzUuMzI3WiJ9LCJpYXQiOjE3NTg0ODcwMjksImV4cCI6MTc1ODQ5MDYyOX0.IpzT0cOoQrBY71_8EED6YpXlCIwiCUXNpMDMNhKinkQ","prefix":"Bearer"},"metaSortKey":-1758486645951,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_b825f64d8a9e4c5faae1dcd3a16103af","parentId":"fld_5fb41aab7cbf4a6b8f5145ae4d724160","modified":1758484643343,"created":1758484623290,"url":"{{ _.baseUrl }}/categories/1","name":"Get alllistings in a category by ID","description":"","method":"GET","body":{},"parameters":[],"headers":[],"authentication":{},"metaSortKey":-1758484623290,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"fld_5fb41aab7cbf4a6b8f5145ae4d724160","parentId":"fld_5cbb316fdbab442f9a7582aadb49001e","modified":1758484500795,"created":1758484500795,"name":"Categories","description":"","environment":{},"environmentPropertyOrder":null,"metaSortKey":-1758484500795,"_type":"request_group"},{"_id":"req_95a80f03719847ab9f32178ed04a2b90","parentId":"fld_5fb41aab7cbf4a6b8f5145ae4d724160","modified":1758484620590,"created":1758484576980,"url":"{{ _.baseUrl }}/categories","name":"Get all categories","description":"","method":"GET","body":{},"parameters":[],"headers":[],"authentication":{},"metaSortKey":-1758484576980,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_ac0fac533f804078975c7af691e18ddf","parentId":"fld_23ef4fd21eb344fbae2c4df5588b08c8","modified":1758478344526,"created":1758477938614,"url":"{{ _.baseUrl }}/newsletter","name":"Sign up to newsletter","description":"Returns 204 on success","method":"POST","body":{"mimeType":"application/json","text":"{\n\t\"email\": \"my.email@swaphub.test\"\n}"},"parameters":[],"headers":[{"name":"Content-Type","value":"application/json"}],"authentication":{},"metaSortKey":-1758477938614,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"fld_23ef4fd21eb344fbae2c4df5588b08c8","parentId":"fld_5cbb316fdbab442f9a7582aadb49001e","modified":1758477936019,"created":1758477936019,"name":"Newsletter","description":"","environment":{},"environmentPropertyOrder":null,"metaSortKey":-1758477936020,"_type":"request_group"},{"_id":"req_a9b2dc85925b471c9857609473f525f3","parentId":"fld_7893b816781748108662d6f332ea22cb","modified":1758485102482,"created":1758473588416,"url":"{{ _.baseUrl }}/assets","name":"Create an asset","description":"Returns\n\n```json\n{\n\t\"id\": 1,\n\t\"url\": \"http://localhost:4000/file-bucket/17584736409046098bf29-f87e-4a35-b112-a43e299915d2.png\",\n\t\"updatedAt\": \"2025-09-21T16:54:00.907Z\",\n\t\"createdAt\": \"2025-09-21T16:54:00.907Z\"\n}\n```","method":"POST","body":{"mimeType":"multipart/form-data","params":[{"id":"pair_d334f2bd6f9d464194dbd3474f9fa0a8","name":"file","value":"","description":"","type":"file","fileName":"C:\\Users\\brian\\OneDrive\\Skrivebord\\billeder til api\\20.png"}]},"parameters":[],"headers":[{"name":"Content-Type","value":"multipart/form-data"}],"authentication":{"type":"bearer","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxMCwiZW1haWwiOiJwcml5YS5wYXRlbEBzd2FwaHViLnRlc3QiLCJwYXNzd29yZCI6IiQyYSQxNSRqUWo5S3E2QW94MFI0TXNNMlcxbHJlOFc1TWpKN1dmNHg5Z0xCbG81clJ1ai5iVGZtMEZXcSIsImZpcnN0bmFtZSI6IlByaXlhIiwibGFzdG5hbWUiOiJQYXRlbCIsImNyZWF0ZWRBdCI6IjIwMjUtMDktMjFUMjA6MDI6MzUuMzI3WiIsInVwZGF0ZWRBdCI6IjIwMjUtMDktMjFUMjA6MDI6MzUuMzI3WiJ9LCJpYXQiOjE3NTg0ODQ5ODgsImV4cCI6MTc1ODQ4ODU4OH0.U9i0fmwwQ2d3yaZl7OJ_hBIHVA5spNoHCCSiKaPJyBI","prefix":"Bearer"},"metaSortKey":-1758473588416,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"fld_7893b816781748108662d6f332ea22cb","parentId":"fld_5cbb316fdbab442f9a7582aadb49001e","modified":1758473237623,"created":1758473237623,"name":"Assets","description":"","environment":{},"environmentPropertyOrder":null,"metaSortKey":-1758473237623,"_type":"request_group"},{"_id":"req_c99f9de13fd543d9ad9385b3fb099279","parentId":"fld_e5e64f9d92a84d21bf9d65479151ac31","modified":1758485955367,"created":1758473795573,"url":"{{ _.baseUrl }}/listings","name":"Create a listing","description":"returns\n\n```json\n{\n\t\"id\": 2,\n\t\"title\": \"Vintage Acoustic Guitar (Yamaha FG-335)\",\n\t\"description\": \"Warm, resonant tone with fresh phosphor bronze strings. Neck is straight, action comfy, and the finish shows a few honest nicks from years of play. Includes a hard case, strap, capo, and a handful of picks.\\nI’d love to trade for a compact digital piano/keyboard, a mirrorless camera body, or quality studio headphones. Local pickup preferred; willing to meet in a public spot nearby.\",\n\t\"assetId\": 1,\n\t\"updatedAt\": \"2025-09-21T17:23:22.141Z\",\n\t\"createdAt\": \"2025-09-21T17:23:22.141Z\"\n}\n```","method":"POST","body":{"mimeType":"application/json","text":"{\n\t\"title\": \"Board Game Collection (Catan, Azul, Wingspan, More)\",\n\t\"description\": \"Family-friendly mix with all components bagged; rulebooks included. Great for game nights or lending library setups.\\nOpen to trades for cooperative games (Pandemic-style), puzzle boxes, or a good chess set with clock. Happy to split if you’ve got targeted offers.\",\n\t\"assetid\": 20,\n\t\"userid\": 1,\n\t\"categoryid\": 1\n}"},"parameters":[],"headers":[{"name":"Content-Type","value":"application/json"}],"authentication":{"type":"bearer","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxMCwiZW1haWwiOiJwcml5YS5wYXRlbEBzd2FwaHViLnRlc3QiLCJwYXNzd29yZCI6IiQyYSQxNSRqUWo5S3E2QW94MFI0TXNNMlcxbHJlOFc1TWpKN1dmNHg5Z0xCbG81clJ1ai5iVGZtMEZXcSIsImZpcnN0bmFtZSI6IlByaXlhIiwibGFzdG5hbWUiOiJQYXRlbCIsImNyZWF0ZWRBdCI6IjIwMjUtMDktMjFUMjA6MDI6MzUuMzI3WiIsInVwZGF0ZWRBdCI6IjIwMjUtMDktMjFUMjA6MDI6MzUuMzI3WiJ9LCJpYXQiOjE3NTg0ODQ5ODgsImV4cCI6MTc1ODQ4ODU4OH0.U9i0fmwwQ2d3yaZl7OJ_hBIHVA5spNoHCCSiKaPJyBI","prefix":"Bearer"},"metaSortKey":-1758474630779,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"fld_e5e64f9d92a84d21bf9d65479151ac31","parentId":"fld_5cbb316fdbab442f9a7582aadb49001e","modified":1758473224938,"created":1758473224938,"name":"Listings","description":"","environment":{},"environmentPropertyOrder":null,"metaSortKey":-1758473224938,"_type":"request_group"},{"_id":"req_8a0532b71ffe4291b35e6b6dd0672ca4","parentId":"fld_e5e64f9d92a84d21bf9d65479151ac31","modified":1758476322291,"created":1758475465985,"url":"{{ _.baseUrl }}/listings","name":"Get all listings","description":"Returns\n\n```json\n[\n\t{\n\t\t\"id\": 1,\n\t\t\"title\": \"Vintage Acoustic Guitar (Yamaha FG-335)\",\n\t\t\"description\": \"Warm, resonant tone with fresh phosphor bronze strings. Neck is straight, action comfy, and the finish shows a few honest nicks from years of play. Includes a hard case, strap, capo, and a handful of picks.\\nI’d love to trade for a compact digital piano/keyboard, a mirrorless camera body, or quality studio headphones. Local pickup preferred; willing to meet in a public spot nearby.\",\n\t\t\"createdAt\": \"2025-09-21T17:34:19.516Z\",\n\t\t\"updatedAt\": \"2025-09-21T17:34:19.516Z\",\n\t\t\"userId\": 1,\n\t\t\"assetId\": 1,\n\t\t\"asset\": {\n\t\t\t\"id\": 1,\n\t\t\t\"url\": \"http://localhost:4000/file-bucket/17584760473896098bf29-f87e-4a35-b112-a43e299915d2.png\",\n\t\t\t\"createdAt\": \"2025-09-21T17:34:07.391Z\",\n\t\t\t\"updatedAt\": \"2025-09-21T17:34:07.391Z\"\n\t\t},\n\t\t\"user\": {\n\t\t\t\"id\": 1,\n\t\t\t\"email\": \"priya.patel@swaphub.test\",\n\t\t\t\"password\": \"$2a$15$.CDNZF0Swoay8DKJ1gyaz.eI.p8UDSUKaFlmUacOkBwC1L/CFwTia\",\n\t\t\t\"firstname\": \"Priya\",\n\t\t\t\"lastname\": \"Patel\",\n\t\t\t\"createdAt\": \"2025-09-21T17:33:49.158Z\",\n\t\t\t\"updatedAt\": \"2025-09-21T17:33:49.158Z\"\n\t\t}\n\t},\n\t{ ... }\n]\n```","method":"GET","body":{},"parameters":[],"headers":[],"authentication":{},"metaSortKey":-1758474630729,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_8db6f9127b654f04abc71f2af538c750","parentId":"fld_e5e64f9d92a84d21bf9d65479151ac31","modified":1758476398940,"created":1758476325084,"url":"{{ _.baseUrl }}/listings/1","name":"Get a single listing by ID","description":"Returns\n\n```json\n{\n\t\"id\": 1,\n\t\"title\": \"Vintage Acoustic Guitar (Yamaha FG-335)\",\n\t\"description\": \"Warm, resonant tone with fresh phosphor bronze strings. Neck is straight, action comfy, and the finish shows a few honest nicks from years of play. Includes a hard case, strap, capo, and a handful of picks.\\nI’d love to trade for a compact digital piano/keyboard, a mirrorless camera body, or quality studio headphones. Local pickup preferred; willing to meet in a public spot nearby.\",\n\t\"createdAt\": \"2025-09-21T17:34:19.516Z\",\n\t\"updatedAt\": \"2025-09-21T17:34:19.516Z\",\n\t\"userId\": 1,\n\t\"assetId\": 1,\n\t\"asset\": {\n\t\t\"id\": 1,\n\t\t\"url\": \"http://localhost:4000/file-bucket/17584760473896098bf29-f87e-4a35-b112-a43e299915d2.png\",\n\t\t\"createdAt\": \"2025-09-21T17:34:07.391Z\",\n\t\t\"updatedAt\": \"2025-09-21T17:34:07.391Z\"\n\t},\n\t\"user\": {\n\t\t\"id\": 1,\n\t\t\"email\": \"priya.patel@swaphub.test\",\n\t\t\"password\": \"$2a$15$.CDNZF0Swoay8DKJ1gyaz.eI.p8UDSUKaFlmUacOkBwC1L/CFwTia\",\n\t\t\"firstname\": \"Priya\",\n\t\t\"lastname\": \"Patel\",\n\t\t\"createdAt\": \"2025-09-21T17:33:49.158Z\",\n\t\t\"updatedAt\": \"2025-09-21T17:33:49.158Z\"\n\t}\n}\n```","method":"GET","body":{},"parameters":[],"headers":[],"authentication":{},"metaSortKey":-1758474630679,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_0e73e46466944354b95c24d1965102be","parentId":"fld_e5e64f9d92a84d21bf9d65479151ac31","modified":1758477044628,"created":1758476410629,"url":"{{ _.baseUrl }}/listings/1","name":"Update a single listing by ID","description":"","method":"PUT","body":{"mimeType":"application/json","text":"{\n\t\"title\": \"Some new title12\",\n\t\"description\": \"A new description text...\",\n\t\"assetid\": 1\n}"},"parameters":[],"headers":[{"name":"Content-Type","value":"application/json"}],"authentication":{"type":"bearer","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJlbWFpbCI6InByaXlhLnBhdGVsQHN3YXBodWIudGVzdCIsInBhc3N3b3JkIjoiJDJhJDE1JC5DRE5aRjBTd29heThES0oxZ3lhei5lSS5wOFVEU1VLYUZsbVVhY09rQndDMUwvQ0Z3VGlhIiwiZmlyc3RuYW1lIjoiUHJpeWEiLCJsYXN0bmFtZSI6IlBhdGVsIiwiY3JlYXRlZEF0IjoiMjAyNS0wOS0yMVQxNzozMzo0OS4xNThaIiwidXBkYXRlZEF0IjoiMjAyNS0wOS0yMVQxNzozMzo0OS4xNThaIn0sImlhdCI6MTc1ODQ3NjQ4NCwiZXhwIjoxNzU4NDgwMDg0fQ.SGZcaOhhMCJ4i1QtwVpia-U9alBN6vuAT_E1GtnSfk8","prefix":"Bearer"},"metaSortKey":-1758474630629,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_4975d680c2244f3caade9ffb669e2f07","parentId":"fld_e5e64f9d92a84d21bf9d65479151ac31","modified":1758477491486,"created":1758477181427,"url":"{{ _.baseUrl }}/listings/1","name":"Delete single listing by ID","description":"","method":"DELETE","body":{},"parameters":[],"headers":[],"authentication":{"type":"bearer","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJlbWFpbCI6InByaXlhLnBhdGVsQHN3YXBodWIudGVzdCIsInBhc3N3b3JkIjoiJDJhJDE1JC5DRE5aRjBTd29heThES0oxZ3lhei5lSS5wOFVEU1VLYUZsbVVhY09rQndDMUwvQ0Z3VGlhIiwiZmlyc3RuYW1lIjoiUHJpeWEiLCJsYXN0bmFtZSI6IlBhdGVsIiwiY3JlYXRlZEF0IjoiMjAyNS0wOS0yMVQxNzozMzo0OS4xNThaIiwidXBkYXRlZEF0IjoiMjAyNS0wOS0yMVQxNzozMzo0OS4xNThaIn0sImlhdCI6MTc1ODQ3NjQ4NCwiZXhwIjoxNzU4NDgwMDg0fQ.SGZcaOhhMCJ4i1QtwVpia-U9alBN6vuAT_E1GtnSfk8","prefix":"Bearer"},"metaSortKey":-1758474630579,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_bcc7f1f1a63e4339a2ecc4db87e9144a","parentId":"fld_f48f1e2d66a142fc8a13b634fe892de4","modified":1758484951823,"created":1758472500528,"url":"{{ _.baseUrl }}/users","name":"Create a user","description":"Returns\n\n```json\n{\n\t\"id\": 10,\n\t\"email\": \"priya.patel@swaphub.test\",\n\t\"password\": \"$2a$15$ghsxLUYRw0k5U98CRpRcoOQdbtsMc.eNuRKAUdug38D/JBN.mSaWC\",\n\t\"firstname\": \"Priya\",\n\t\"lastname\": \"Patel\",\n\t\"updatedAt\": \"2025-09-21T16:41:13.820Z\",\n\t\"createdAt\": \"2025-09-21T16:41:13.820Z\"\n}\n```","method":"POST","body":{"mimeType":"application/json","text":"{\n\t\"email\": \"priya.patel@swaphub.test\",\n\t\"password\": \"password1234\",\n\t\"firstname\": \"Priya\",\n\t\"lastname\": \"Patel\"\n}"},"parameters":[],"headers":[{"name":"Content-Type","value":"application/json"}],"authentication":{},"metaSortKey":-1758472500528,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"fld_f48f1e2d66a142fc8a13b634fe892de4","parentId":"fld_5cbb316fdbab442f9a7582aadb49001e","modified":1758472498616,"created":1758472479548,"name":"Users","description":"","environment":{},"environmentPropertyOrder":null,"metaSortKey":-1758472479548,"_type":"request_group"},{"_id":"req_a1e1eaea9117492996ee6f3f63cffd06","parentId":"fld_f48f1e2d66a142fc8a13b634fe892de4","modified":1758486315347,"created":1758473111516,"url":"{{ _.baseUrl }}/users/10","name":"Get a single user by ID","description":"Returns\n\n```json\n{\n\t\"id\": 10,\n\t\"email\": \"priya.patel@swaphub.test\",\n\t\"password\": \"$2a$15$ghsxLUYRw0k5U98CRpRcoOQdbtsMc.eNuRKAUdug38D/JBN.mSaWC\",\n\t\"firstname\": \"Priya\",\n\t\"lastname\": \"Patel\",\n\t\"createdAt\": \"2025-09-21T16:41:13.820Z\",\n\t\"updatedAt\": \"2025-09-21T16:41:13.820Z\",\n\t\"listings\": []\n}\n```","method":"GET","body":{},"parameters":[],"headers":[],"authentication":{"type":"bearer","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxMCwiZW1haWwiOiJwcml5YS5wYXRlbEBzd2FwaHViLnRlc3QiLCJwYXNzd29yZCI6IiQyYSQxNSRqUWo5S3E2QW94MFI0TXNNMlcxbHJlOFc1TWpKN1dmNHg5Z0xCbG81clJ1ai5iVGZtMEZXcSIsImZpcnN0bmFtZSI6IlByaXlhIiwibGFzdG5hbWUiOiJQYXRlbCIsImNyZWF0ZWRBdCI6IjIwMjUtMDktMjFUMjA6MDI6MzUuMzI3WiIsInVwZGF0ZWRBdCI6IjIwMjUtMDktMjFUMjA6MDI6MzUuMzI3WiJ9LCJpYXQiOjE3NTg0ODQ5ODgsImV4cCI6MTc1ODQ4ODU4OH0.U9i0fmwwQ2d3yaZl7OJ_hBIHVA5spNoHCCSiKaPJyBI","prefix":"Bearer"},"metaSortKey":-1758472500478,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_abb4121171d748c8998bf9561168527d","parentId":"fld_f48f1e2d66a142fc8a13b634fe892de4","modified":1758477619466,"created":1758477519650,"url":"{{ _.baseUrl }}/users/1","name":"Update single user by ID","description":"","method":"PUT","body":{"mimeType":"application/json","text":"{\n\t\"email\": \"my.new.email@swaphub.test\",\n\t\"password\": \"myNewPassword\",\n\t\"firstname\": \"Albert\",\n\t\"lastname\": \"Einstein\"\n}"},"parameters":[],"headers":[{"name":"Content-Type","value":"application/json"}],"authentication":{"type":"bearer","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJlbWFpbCI6InByaXlhLnBhdGVsQHN3YXBodWIudGVzdCIsInBhc3N3b3JkIjoiJDJhJDE1JC5DRE5aRjBTd29heThES0oxZ3lhei5lSS5wOFVEU1VLYUZsbVVhY09rQndDMUwvQ0Z3VGlhIiwiZmlyc3RuYW1lIjoiUHJpeWEiLCJsYXN0bmFtZSI6IlBhdGVsIiwiY3JlYXRlZEF0IjoiMjAyNS0wOS0yMVQxNzozMzo0OS4xNThaIiwidXBkYXRlZEF0IjoiMjAyNS0wOS0yMVQxNzozMzo0OS4xNThaIn0sImlhdCI6MTc1ODQ3NjQ4NCwiZXhwIjoxNzU4NDgwMDg0fQ.SGZcaOhhMCJ4i1QtwVpia-U9alBN6vuAT_E1GtnSfk8","prefix":"Bearer"},"metaSortKey":-1758472500428,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_a6fa6a04fe6c44b28d53baeaa8d27412","parentId":"fld_ea42528caf6c491ab60c4b5eb9ae6f76","modified":1758487038277,"created":1758473012881,"url":"http://localhost:4000/auth/token","name":"Create an access token","description":"Returns\n\n```json\n{\n\t\"userId\": 10,\n\t\"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxMCwiZW1haWwiOiJwcml5YS5wYXRlbEBzd2FwaHViLnRlc3QiLCJwYXNzd29yZCI6IiQyYSQxNSRnaHN4TFVZUncwazVVOThDUnBSY29PUWRidHNNYy5lTnVSS0FVZHVnMzhEL0pCTi5tU2FXQyIsImZpcnN0bmFtZSI6IlByaXlhIiwibGFzdG5hbWUiOiJQYXRlbCIsImNyZWF0ZWRBdCI6IjIwMjUtMDktMjFUMTY6NDE6MTMuODIwWiIsInVwZGF0ZWRBdCI6IjIwMjUtMDktMjFUMTY6NDE6MTMuODIwWiJ9LCJpYXQiOjE3NTg0NzMwNjksImV4cCI6MTc1ODQ3NjY2OX0.ZJYthFv0RiUY2Qw6ioJelT-9c9sYYoYksQpPEQvVVKY\",\n\t\"validUntil\": 1758476669077\n}\n```","method":"POST","body":{"mimeType":"application/json","text":"{\n\t\"email\": \"priya.patel@swaphub.test\",\n\t\"password\": \"password1234\"\n}"},"parameters":[],"headers":[{"name":"Content-Type","value":"application/json"}],"authentication":{},"metaSortKey":-1758473012881,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"fld_ea42528caf6c491ab60c4b5eb9ae6f76","parentId":"fld_b73d89a9f7a044b297effa948230fcf6","modified":1758473007997,"created":1758472993138,"name":"Token","description":"","environment":{},"environmentPropertyOrder":null,"metaSortKey":-1758472735042,"_type":"request_group"},{"_id":"fld_b73d89a9f7a044b297effa948230fcf6","parentId":"wrk_a4e59e40860b45c2902a4303e7b067c8","modified":1758473256661,"created":1758472982462,"name":"Authentication","description":"","environment":{},"environmentPropertyOrder":null,"metaSortKey":-1758472487572,"_type":"request_group"},{"_id":"env_d51a293fa5b9b8a450e137609bb1d06e86e18f87","parentId":"wrk_a4e59e40860b45c2902a4303e7b067c8","modified":1758472535250,"created":1758472470844,"name":"Base Environment","data":{"baseUrl":"http://localhost:4000/api/v1"},"dataPropertyOrder":{"&":["baseUrl"]},"color":null,"isPrivate":false,"metaSortKey":1758472470844,"_type":"environment"},{"_id":"jar_d51a293fa5b9b8a450e137609bb1d06e86e18f87","parentId":"wrk_a4e59e40860b45c2902a4303e7b067c8","modified":1758472470846,"created":1758472470846,"name":"Default Jar","cookies":[],"_type":"cookie_jar"},{"_id":"spc_12d4102daa9944f6b4fae4fc7337cab7","parentId":"wrk_a4e59e40860b45c2902a4303e7b067c8","modified":1758472470839,"created":1758472470839,"fileName":"SwapHub","contents":"","contentType":"yaml","_type":"api_spec"}]}
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2025-09-21T20:55:15.216Z",
+    "__export_source": "insomnia.desktop.app:v2023.2.0",
+    "resources": [
+        {
+            "_id": "req_7e5658a7636844f1a75774b284c46142",
+            "parentId": "fld_70aeaab813994dfb893120f64c0c5190",
+            "modified": 1758487464611,
+            "created": 1758486646051,
+            "url": "{{ _.baseUrl }}/requests",
+            "name": "Create a user request",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"userid\": 1,\n\t\"requestItem\": 6,\n\t\"offerItem\": 1\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxMCwiZW1haWwiOiJwcml5YS5wYXRlbEBzd2FwaHViLnRlc3QiLCJwYXNzd29yZCI6IiQyYSQxNSRqUWo5S3E2QW94MFI0TXNNMlcxbHJlOFc1TWpKN1dmNHg5Z0xCbG81clJ1ai5iVGZtMEZXcSIsImZpcnN0bmFtZSI6IlByaXlhIiwibGFzdG5hbWUiOiJQYXRlbCIsImNyZWF0ZWRBdCI6IjIwMjUtMDktMjFUMjA6MDI6MzUuMzI3WiIsInVwZGF0ZWRBdCI6IjIwMjUtMDktMjFUMjA6MDI6MzUuMzI3WiJ9LCJpYXQiOjE3NTg0ODQ5ODgsImV4cCI6MTc1ODQ4ODU4OH0.U9i0fmwwQ2d3yaZl7OJ_hBIHVA5spNoHCCSiKaPJyBI",
+                "prefix": "Bearer"
+            },
+            "metaSortKey": -1758486646051,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_70aeaab813994dfb893120f64c0c5190",
+            "parentId": "fld_5cbb316fdbab442f9a7582aadb49001e",
+            "modified": 1758486644645,
+            "created": 1758486644645,
+            "name": "Requests",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1758486644645,
+            "_type": "request_group"
+        },
+        {
+            "_id": "fld_5cbb316fdbab442f9a7582aadb49001e",
+            "parentId": "fld_b3021e78c1cd4a29a61ff2c9ba37f35d",
+            "modified": 1758472496616,
+            "created": 1758472493345,
+            "name": "V1",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1758472493345,
+            "_type": "request_group"
+        },
+        {
+            "_id": "fld_b3021e78c1cd4a29a61ff2c9ba37f35d",
+            "parentId": "wrk_a4e59e40860b45c2902a4303e7b067c8",
+            "modified": 1758472487622,
+            "created": 1758472487622,
+            "name": "API",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1758472487622,
+            "_type": "request_group"
+        },
+        {
+            "_id": "wrk_a4e59e40860b45c2902a4303e7b067c8",
+            "parentId": null,
+            "modified": 1758472470838,
+            "created": 1758472470838,
+            "name": "SwapHub",
+            "description": "",
+            "scope": "collection",
+            "_type": "workspace"
+        },
+        {
+            "_id": "req_98af9a4ec346492096884f37e884f986",
+            "parentId": "fld_70aeaab813994dfb893120f64c0c5190",
+            "modified": 1758487759563,
+            "created": 1758487739360,
+            "url": "{{ _.baseUrl }}/requests",
+            "name": "List all user requests",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {},
+            "metaSortKey": -1758486646026,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_b45b45c7a4524fc99771d0f5bf4992b2",
+            "parentId": "fld_70aeaab813994dfb893120f64c0c5190",
+            "modified": 1758487565223,
+            "created": 1758487468576,
+            "url": "{{ _.baseUrl }}/requests/1",
+            "name": "List all user requests by user ID",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxMCwiZW1haWwiOiJwcml5YS5wYXRlbEBzd2FwaHViLnRlc3QiLCJwYXNzd29yZCI6IiQyYSQxNSRqUWo5S3E2QW94MFI0TXNNMlcxbHJlOFc1TWpKN1dmNHg5Z0xCbG81clJ1ai5iVGZtMEZXcSIsImZpcnN0bmFtZSI6IlByaXlhIiwibGFzdG5hbWUiOiJQYXRlbCIsImNyZWF0ZWRBdCI6IjIwMjUtMDktMjFUMjA6MDI6MzUuMzI3WiIsInVwZGF0ZWRBdCI6IjIwMjUtMDktMjFUMjA6MDI6MzUuMzI3WiJ9LCJpYXQiOjE3NTg0ODcwMjksImV4cCI6MTc1ODQ5MDYyOX0.IpzT0cOoQrBY71_8EED6YpXlCIwiCUXNpMDMNhKinkQ",
+                "prefix": "Bearer"
+            },
+            "metaSortKey": -1758486646001,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_959220caafa449b5a61bc4ea75e4da64",
+            "parentId": "fld_70aeaab813994dfb893120f64c0c5190",
+            "modified": 1758487639245,
+            "created": 1758487573000,
+            "url": "{{ _.baseUrl }}/requests/1",
+            "name": "Delete a user request by request ID",
+            "description": "",
+            "method": "DELETE",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxMCwiZW1haWwiOiJwcml5YS5wYXRlbEBzd2FwaHViLnRlc3QiLCJwYXNzd29yZCI6IiQyYSQxNSRqUWo5S3E2QW94MFI0TXNNMlcxbHJlOFc1TWpKN1dmNHg5Z0xCbG81clJ1ai5iVGZtMEZXcSIsImZpcnN0bmFtZSI6IlByaXlhIiwibGFzdG5hbWUiOiJQYXRlbCIsImNyZWF0ZWRBdCI6IjIwMjUtMDktMjFUMjA6MDI6MzUuMzI3WiIsInVwZGF0ZWRBdCI6IjIwMjUtMDktMjFUMjA6MDI6MzUuMzI3WiJ9LCJpYXQiOjE3NTg0ODcwMjksImV4cCI6MTc1ODQ5MDYyOX0.IpzT0cOoQrBY71_8EED6YpXlCIwiCUXNpMDMNhKinkQ",
+                "prefix": "Bearer"
+            },
+            "metaSortKey": -1758486645951,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_b825f64d8a9e4c5faae1dcd3a16103af",
+            "parentId": "fld_5fb41aab7cbf4a6b8f5145ae4d724160",
+            "modified": 1758484643343,
+            "created": 1758484623290,
+            "url": "{{ _.baseUrl }}/categories/1",
+            "name": "Get alllistings in a category by ID",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {},
+            "metaSortKey": -1758484623290,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_5fb41aab7cbf4a6b8f5145ae4d724160",
+            "parentId": "fld_5cbb316fdbab442f9a7582aadb49001e",
+            "modified": 1758484500795,
+            "created": 1758484500795,
+            "name": "Categories",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1758484500795,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_95a80f03719847ab9f32178ed04a2b90",
+            "parentId": "fld_5fb41aab7cbf4a6b8f5145ae4d724160",
+            "modified": 1758484620590,
+            "created": 1758484576980,
+            "url": "{{ _.baseUrl }}/categories",
+            "name": "Get all categories",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {},
+            "metaSortKey": -1758484576980,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_ac0fac533f804078975c7af691e18ddf",
+            "parentId": "fld_23ef4fd21eb344fbae2c4df5588b08c8",
+            "modified": 1758478344526,
+            "created": 1758477938614,
+            "url": "{{ _.baseUrl }}/newsletter",
+            "name": "Sign up to newsletter",
+            "description": "Returns 204 on success",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"email\": \"my.email@swaphub.test\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1758477938614,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_23ef4fd21eb344fbae2c4df5588b08c8",
+            "parentId": "fld_5cbb316fdbab442f9a7582aadb49001e",
+            "modified": 1758477936019,
+            "created": 1758477936019,
+            "name": "Newsletter",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1758477936020,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_a9b2dc85925b471c9857609473f525f3",
+            "parentId": "fld_7893b816781748108662d6f332ea22cb",
+            "modified": 1758485102482,
+            "created": 1758473588416,
+            "url": "{{ _.baseUrl }}/assets",
+            "name": "Create an asset",
+            "description": "Returns\n\n```json\n{\n\t\"id\": 1,\n\t\"url\": \"http://localhost:4000/file-bucket/17584736409046098bf29-f87e-4a35-b112-a43e299915d2.png\",\n\t\"updatedAt\": \"2025-09-21T16:54:00.907Z\",\n\t\"createdAt\": \"2025-09-21T16:54:00.907Z\"\n}\n```",
+            "method": "POST",
+            "body": {
+                "mimeType": "multipart/form-data",
+                "params": [
+                    {
+                        "id": "pair_d334f2bd6f9d464194dbd3474f9fa0a8",
+                        "name": "file",
+                        "value": "",
+                        "description": "",
+                        "type": "file",
+                        "fileName": "C:\\Users\\brian\\OneDrive\\Skrivebord\\billeder til api\\20.png"
+                    }
+                ]
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "multipart/form-data"
+                }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxMCwiZW1haWwiOiJwcml5YS5wYXRlbEBzd2FwaHViLnRlc3QiLCJwYXNzd29yZCI6IiQyYSQxNSRqUWo5S3E2QW94MFI0TXNNMlcxbHJlOFc1TWpKN1dmNHg5Z0xCbG81clJ1ai5iVGZtMEZXcSIsImZpcnN0bmFtZSI6IlByaXlhIiwibGFzdG5hbWUiOiJQYXRlbCIsImNyZWF0ZWRBdCI6IjIwMjUtMDktMjFUMjA6MDI6MzUuMzI3WiIsInVwZGF0ZWRBdCI6IjIwMjUtMDktMjFUMjA6MDI6MzUuMzI3WiJ9LCJpYXQiOjE3NTg0ODQ5ODgsImV4cCI6MTc1ODQ4ODU4OH0.U9i0fmwwQ2d3yaZl7OJ_hBIHVA5spNoHCCSiKaPJyBI",
+                "prefix": "Bearer"
+            },
+            "metaSortKey": -1758473588416,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_7893b816781748108662d6f332ea22cb",
+            "parentId": "fld_5cbb316fdbab442f9a7582aadb49001e",
+            "modified": 1758473237623,
+            "created": 1758473237623,
+            "name": "Assets",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1758473237623,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_c99f9de13fd543d9ad9385b3fb099279",
+            "parentId": "fld_e5e64f9d92a84d21bf9d65479151ac31",
+            "modified": 1758485955367,
+            "created": 1758473795573,
+            "url": "{{ _.baseUrl }}/listings",
+            "name": "Create a listing",
+            "description": "returns\n\n```json\n{\n\t\"id\": 2,\n\t\"title\": \"Vintage Acoustic Guitar (Yamaha FG-335)\",\n\t\"description\": \"Warm, resonant tone with fresh phosphor bronze strings. Neck is straight, action comfy, and the finish shows a few honest nicks from years of play. Includes a hard case, strap, capo, and a handful of picks.\\nI’d love to trade for a compact digital piano/keyboard, a mirrorless camera body, or quality studio headphones. Local pickup preferred; willing to meet in a public spot nearby.\",\n\t\"assetId\": 1,\n\t\"updatedAt\": \"2025-09-21T17:23:22.141Z\",\n\t\"createdAt\": \"2025-09-21T17:23:22.141Z\"\n}\n```",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"title\": \"Board Game Collection (Catan, Azul, Wingspan, More)\",\n\t\"description\": \"Family-friendly mix with all components bagged; rulebooks included. Great for game nights or lending library setups.\\nOpen to trades for cooperative games (Pandemic-style), puzzle boxes, or a good chess set with clock. Happy to split if you’ve got targeted offers.\",\n\t\"assetid\": 20,\n\t\"userid\": 1,\n\t\"categoryid\": 1\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxMCwiZW1haWwiOiJwcml5YS5wYXRlbEBzd2FwaHViLnRlc3QiLCJwYXNzd29yZCI6IiQyYSQxNSRqUWo5S3E2QW94MFI0TXNNMlcxbHJlOFc1TWpKN1dmNHg5Z0xCbG81clJ1ai5iVGZtMEZXcSIsImZpcnN0bmFtZSI6IlByaXlhIiwibGFzdG5hbWUiOiJQYXRlbCIsImNyZWF0ZWRBdCI6IjIwMjUtMDktMjFUMjA6MDI6MzUuMzI3WiIsInVwZGF0ZWRBdCI6IjIwMjUtMDktMjFUMjA6MDI6MzUuMzI3WiJ9LCJpYXQiOjE3NTg0ODQ5ODgsImV4cCI6MTc1ODQ4ODU4OH0.U9i0fmwwQ2d3yaZl7OJ_hBIHVA5spNoHCCSiKaPJyBI",
+                "prefix": "Bearer"
+            },
+            "metaSortKey": -1758474630779,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_e5e64f9d92a84d21bf9d65479151ac31",
+            "parentId": "fld_5cbb316fdbab442f9a7582aadb49001e",
+            "modified": 1758473224938,
+            "created": 1758473224938,
+            "name": "Listings",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1758473224938,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_8a0532b71ffe4291b35e6b6dd0672ca4",
+            "parentId": "fld_e5e64f9d92a84d21bf9d65479151ac31",
+            "modified": 1758476322291,
+            "created": 1758475465985,
+            "url": "{{ _.baseUrl }}/listings",
+            "name": "Get all listings",
+            "description": "Returns\n\n```json\n[\n\t{\n\t\t\"id\": 1,\n\t\t\"title\": \"Vintage Acoustic Guitar (Yamaha FG-335)\",\n\t\t\"description\": \"Warm, resonant tone with fresh phosphor bronze strings. Neck is straight, action comfy, and the finish shows a few honest nicks from years of play. Includes a hard case, strap, capo, and a handful of picks.\\nI’d love to trade for a compact digital piano/keyboard, a mirrorless camera body, or quality studio headphones. Local pickup preferred; willing to meet in a public spot nearby.\",\n\t\t\"createdAt\": \"2025-09-21T17:34:19.516Z\",\n\t\t\"updatedAt\": \"2025-09-21T17:34:19.516Z\",\n\t\t\"userid\": 1,\n\t\t\"assetId\": 1,\n\t\t\"asset\": {\n\t\t\t\"id\": 1,\n\t\t\t\"url\": \"http://localhost:4000/file-bucket/17584760473896098bf29-f87e-4a35-b112-a43e299915d2.png\",\n\t\t\t\"createdAt\": \"2025-09-21T17:34:07.391Z\",\n\t\t\t\"updatedAt\": \"2025-09-21T17:34:07.391Z\"\n\t\t},\n\t\t\"user\": {\n\t\t\t\"id\": 1,\n\t\t\t\"email\": \"priya.patel@swaphub.test\",\n\t\t\t\"password\": \"$2a$15$.CDNZF0Swoay8DKJ1gyaz.eI.p8UDSUKaFlmUacOkBwC1L/CFwTia\",\n\t\t\t\"firstname\": \"Priya\",\n\t\t\t\"lastname\": \"Patel\",\n\t\t\t\"createdAt\": \"2025-09-21T17:33:49.158Z\",\n\t\t\t\"updatedAt\": \"2025-09-21T17:33:49.158Z\"\n\t\t}\n\t},\n\t{ ... }\n]\n```",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {},
+            "metaSortKey": -1758474630729,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_8db6f9127b654f04abc71f2af538c750",
+            "parentId": "fld_e5e64f9d92a84d21bf9d65479151ac31",
+            "modified": 1758476398940,
+            "created": 1758476325084,
+            "url": "{{ _.baseUrl }}/listings/1",
+            "name": "Get a single listing by ID",
+            "description": "Returns\n\n```json\n{\n\t\"id\": 1,\n\t\"title\": \"Vintage Acoustic Guitar (Yamaha FG-335)\",\n\t\"description\": \"Warm, resonant tone with fresh phosphor bronze strings. Neck is straight, action comfy, and the finish shows a few honest nicks from years of play. Includes a hard case, strap, capo, and a handful of picks.\\nI’d love to trade for a compact digital piano/keyboard, a mirrorless camera body, or quality studio headphones. Local pickup preferred; willing to meet in a public spot nearby.\",\n\t\"createdAt\": \"2025-09-21T17:34:19.516Z\",\n\t\"updatedAt\": \"2025-09-21T17:34:19.516Z\",\n\t\"userid\": 1,\n\t\"assetId\": 1,\n\t\"asset\": {\n\t\t\"id\": 1,\n\t\t\"url\": \"http://localhost:4000/file-bucket/17584760473896098bf29-f87e-4a35-b112-a43e299915d2.png\",\n\t\t\"createdAt\": \"2025-09-21T17:34:07.391Z\",\n\t\t\"updatedAt\": \"2025-09-21T17:34:07.391Z\"\n\t},\n\t\"user\": {\n\t\t\"id\": 1,\n\t\t\"email\": \"priya.patel@swaphub.test\",\n\t\t\"password\": \"$2a$15$.CDNZF0Swoay8DKJ1gyaz.eI.p8UDSUKaFlmUacOkBwC1L/CFwTia\",\n\t\t\"firstname\": \"Priya\",\n\t\t\"lastname\": \"Patel\",\n\t\t\"createdAt\": \"2025-09-21T17:33:49.158Z\",\n\t\t\"updatedAt\": \"2025-09-21T17:33:49.158Z\"\n\t}\n}\n```",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {},
+            "metaSortKey": -1758474630679,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_0e73e46466944354b95c24d1965102be",
+            "parentId": "fld_e5e64f9d92a84d21bf9d65479151ac31",
+            "modified": 1758477044628,
+            "created": 1758476410629,
+            "url": "{{ _.baseUrl }}/listings/1",
+            "name": "Update a single listing by ID",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"title\": \"Some new title12\",\n\t\"description\": \"A new description text...\",\n\t\"assetid\": 1\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJlbWFpbCI6InByaXlhLnBhdGVsQHN3YXBodWIudGVzdCIsInBhc3N3b3JkIjoiJDJhJDE1JC5DRE5aRjBTd29heThES0oxZ3lhei5lSS5wOFVEU1VLYUZsbVVhY09rQndDMUwvQ0Z3VGlhIiwiZmlyc3RuYW1lIjoiUHJpeWEiLCJsYXN0bmFtZSI6IlBhdGVsIiwiY3JlYXRlZEF0IjoiMjAyNS0wOS0yMVQxNzozMzo0OS4xNThaIiwidXBkYXRlZEF0IjoiMjAyNS0wOS0yMVQxNzozMzo0OS4xNThaIn0sImlhdCI6MTc1ODQ3NjQ4NCwiZXhwIjoxNzU4NDgwMDg0fQ.SGZcaOhhMCJ4i1QtwVpia-U9alBN6vuAT_E1GtnSfk8",
+                "prefix": "Bearer"
+            },
+            "metaSortKey": -1758474630629,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_4975d680c2244f3caade9ffb669e2f07",
+            "parentId": "fld_e5e64f9d92a84d21bf9d65479151ac31",
+            "modified": 1758477491486,
+            "created": 1758477181427,
+            "url": "{{ _.baseUrl }}/listings/1",
+            "name": "Delete single listing by ID",
+            "description": "",
+            "method": "DELETE",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJlbWFpbCI6InByaXlhLnBhdGVsQHN3YXBodWIudGVzdCIsInBhc3N3b3JkIjoiJDJhJDE1JC5DRE5aRjBTd29heThES0oxZ3lhei5lSS5wOFVEU1VLYUZsbVVhY09rQndDMUwvQ0Z3VGlhIiwiZmlyc3RuYW1lIjoiUHJpeWEiLCJsYXN0bmFtZSI6IlBhdGVsIiwiY3JlYXRlZEF0IjoiMjAyNS0wOS0yMVQxNzozMzo0OS4xNThaIiwidXBkYXRlZEF0IjoiMjAyNS0wOS0yMVQxNzozMzo0OS4xNThaIn0sImlhdCI6MTc1ODQ3NjQ4NCwiZXhwIjoxNzU4NDgwMDg0fQ.SGZcaOhhMCJ4i1QtwVpia-U9alBN6vuAT_E1GtnSfk8",
+                "prefix": "Bearer"
+            },
+            "metaSortKey": -1758474630579,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_bcc7f1f1a63e4339a2ecc4db87e9144a",
+            "parentId": "fld_f48f1e2d66a142fc8a13b634fe892de4",
+            "modified": 1758484951823,
+            "created": 1758472500528,
+            "url": "{{ _.baseUrl }}/users",
+            "name": "Create a user",
+            "description": "Returns\n\n```json\n{\n\t\"id\": 10,\n\t\"email\": \"priya.patel@swaphub.test\",\n\t\"password\": \"$2a$15$ghsxLUYRw0k5U98CRpRcoOQdbtsMc.eNuRKAUdug38D/JBN.mSaWC\",\n\t\"firstname\": \"Priya\",\n\t\"lastname\": \"Patel\",\n\t\"updatedAt\": \"2025-09-21T16:41:13.820Z\",\n\t\"createdAt\": \"2025-09-21T16:41:13.820Z\"\n}\n```",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"email\": \"priya.patel@swaphub.test\",\n\t\"password\": \"password1234\",\n\t\"firstname\": \"Priya\",\n\t\"lastname\": \"Patel\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1758472500528,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_f48f1e2d66a142fc8a13b634fe892de4",
+            "parentId": "fld_5cbb316fdbab442f9a7582aadb49001e",
+            "modified": 1758472498616,
+            "created": 1758472479548,
+            "name": "Users",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1758472479548,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_a1e1eaea9117492996ee6f3f63cffd06",
+            "parentId": "fld_f48f1e2d66a142fc8a13b634fe892de4",
+            "modified": 1758486315347,
+            "created": 1758473111516,
+            "url": "{{ _.baseUrl }}/users/10",
+            "name": "Get a single user by ID",
+            "description": "Returns\n\n```json\n{\n\t\"id\": 10,\n\t\"email\": \"priya.patel@swaphub.test\",\n\t\"password\": \"$2a$15$ghsxLUYRw0k5U98CRpRcoOQdbtsMc.eNuRKAUdug38D/JBN.mSaWC\",\n\t\"firstname\": \"Priya\",\n\t\"lastname\": \"Patel\",\n\t\"createdAt\": \"2025-09-21T16:41:13.820Z\",\n\t\"updatedAt\": \"2025-09-21T16:41:13.820Z\",\n\t\"listings\": []\n}\n```",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxMCwiZW1haWwiOiJwcml5YS5wYXRlbEBzd2FwaHViLnRlc3QiLCJwYXNzd29yZCI6IiQyYSQxNSRqUWo5S3E2QW94MFI0TXNNMlcxbHJlOFc1TWpKN1dmNHg5Z0xCbG81clJ1ai5iVGZtMEZXcSIsImZpcnN0bmFtZSI6IlByaXlhIiwibGFzdG5hbWUiOiJQYXRlbCIsImNyZWF0ZWRBdCI6IjIwMjUtMDktMjFUMjA6MDI6MzUuMzI3WiIsInVwZGF0ZWRBdCI6IjIwMjUtMDktMjFUMjA6MDI6MzUuMzI3WiJ9LCJpYXQiOjE3NTg0ODQ5ODgsImV4cCI6MTc1ODQ4ODU4OH0.U9i0fmwwQ2d3yaZl7OJ_hBIHVA5spNoHCCSiKaPJyBI",
+                "prefix": "Bearer"
+            },
+            "metaSortKey": -1758472500478,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_abb4121171d748c8998bf9561168527d",
+            "parentId": "fld_f48f1e2d66a142fc8a13b634fe892de4",
+            "modified": 1758477619466,
+            "created": 1758477519650,
+            "url": "{{ _.baseUrl }}/users/1",
+            "name": "Update single user by ID",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"email\": \"my.new.email@swaphub.test\",\n\t\"password\": \"myNewPassword\",\n\t\"firstname\": \"Albert\",\n\t\"lastname\": \"Einstein\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJlbWFpbCI6InByaXlhLnBhdGVsQHN3YXBodWIudGVzdCIsInBhc3N3b3JkIjoiJDJhJDE1JC5DRE5aRjBTd29heThES0oxZ3lhei5lSS5wOFVEU1VLYUZsbVVhY09rQndDMUwvQ0Z3VGlhIiwiZmlyc3RuYW1lIjoiUHJpeWEiLCJsYXN0bmFtZSI6IlBhdGVsIiwiY3JlYXRlZEF0IjoiMjAyNS0wOS0yMVQxNzozMzo0OS4xNThaIiwidXBkYXRlZEF0IjoiMjAyNS0wOS0yMVQxNzozMzo0OS4xNThaIn0sImlhdCI6MTc1ODQ3NjQ4NCwiZXhwIjoxNzU4NDgwMDg0fQ.SGZcaOhhMCJ4i1QtwVpia-U9alBN6vuAT_E1GtnSfk8",
+                "prefix": "Bearer"
+            },
+            "metaSortKey": -1758472500428,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_a6fa6a04fe6c44b28d53baeaa8d27412",
+            "parentId": "fld_ea42528caf6c491ab60c4b5eb9ae6f76",
+            "modified": 1758487038277,
+            "created": 1758473012881,
+            "url": "http://localhost:4000/auth/token",
+            "name": "Create an access token",
+            "description": "Returns\n\n```json\n{\n\t\"userid\": 10,\n\t\"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxMCwiZW1haWwiOiJwcml5YS5wYXRlbEBzd2FwaHViLnRlc3QiLCJwYXNzd29yZCI6IiQyYSQxNSRnaHN4TFVZUncwazVVOThDUnBSY29PUWRidHNNYy5lTnVSS0FVZHVnMzhEL0pCTi5tU2FXQyIsImZpcnN0bmFtZSI6IlByaXlhIiwibGFzdG5hbWUiOiJQYXRlbCIsImNyZWF0ZWRBdCI6IjIwMjUtMDktMjFUMTY6NDE6MTMuODIwWiIsInVwZGF0ZWRBdCI6IjIwMjUtMDktMjFUMTY6NDE6MTMuODIwWiJ9LCJpYXQiOjE3NTg0NzMwNjksImV4cCI6MTc1ODQ3NjY2OX0.ZJYthFv0RiUY2Qw6ioJelT-9c9sYYoYksQpPEQvVVKY\",\n\t\"validUntil\": 1758476669077\n}\n```",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"email\": \"priya.patel@swaphub.test\",\n\t\"password\": \"password1234\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1758473012881,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_ea42528caf6c491ab60c4b5eb9ae6f76",
+            "parentId": "fld_b73d89a9f7a044b297effa948230fcf6",
+            "modified": 1758473007997,
+            "created": 1758472993138,
+            "name": "Token",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1758472735042,
+            "_type": "request_group"
+        },
+        {
+            "_id": "fld_b73d89a9f7a044b297effa948230fcf6",
+            "parentId": "wrk_a4e59e40860b45c2902a4303e7b067c8",
+            "modified": 1758473256661,
+            "created": 1758472982462,
+            "name": "Authentication",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1758472487572,
+            "_type": "request_group"
+        },
+        {
+            "_id": "env_d51a293fa5b9b8a450e137609bb1d06e86e18f87",
+            "parentId": "wrk_a4e59e40860b45c2902a4303e7b067c8",
+            "modified": 1758472535250,
+            "created": 1758472470844,
+            "name": "Base Environment",
+            "data": {
+                "baseUrl": "http://localhost:4000/api/v1"
+            },
+            "dataPropertyOrder": {
+                "&": [
+                    "baseUrl"
+                ]
+            },
+            "color": null,
+            "isPrivate": false,
+            "metaSortKey": 1758472470844,
+            "_type": "environment"
+        },
+        {
+            "_id": "jar_d51a293fa5b9b8a450e137609bb1d06e86e18f87",
+            "parentId": "wrk_a4e59e40860b45c2902a4303e7b067c8",
+            "modified": 1758472470846,
+            "created": 1758472470846,
+            "name": "Default Jar",
+            "cookies": [],
+            "_type": "cookie_jar"
+        },
+        {
+            "_id": "spc_12d4102daa9944f6b4fae4fc7337cab7",
+            "parentId": "wrk_a4e59e40860b45c2902a4303e7b067c8",
+            "modified": 1758472470839,
+            "created": 1758472470839,
+            "fileName": "SwapHub",
+            "contents": "",
+            "contentType": "yaml",
+            "_type": "api_spec"
+        }
+    ]
+}

@@ -1,6 +1,9 @@
 "use server";
 import Image from "next/image";
+import Link from "next/link";
 import "./listing-details.scss";
+import SwapButton from "@/app/components/ui/buttons/swap-button"; 
+import { cookies } from "next/headers";
 
 
 export default async function ListingDetailsPage( {params} ) {
@@ -13,6 +16,17 @@ export default async function ListingDetailsPage( {params} ) {
         return <div>Listing ikke fundet</div>;
     }
     const listing = await response.json();
+
+    const cookieStore = cookies();
+    const token = cookieStore.get("sh_token")?.value;
+
+    let otherListings = [];
+    if (listing.userId) {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/listings?userId/${listing.userId}&exclude=${id}`
+
+        );
+        if (res.ok) otherListings = await res.json();
+    }
 
     return (
         <>
@@ -30,10 +44,44 @@ export default async function ListingDetailsPage( {params} ) {
             <div className="details__content">
             <h1>{listing.title}</h1>
             <p>{listing.description}</p>
-            <button className="swap-button">Propose a swap</button>
+           {token && <SwapButton
+           requestItemId={listing.id}
+           myItemsId={1}
+           userid={(await cookieStore).get("sh_userid")?.value}
+           token={token}
+           ></SwapButton>}
             </div>
 
         </div>
+
+        {otherListings.length > 0 && (
+            <div className="other__listings--slider">
+                <h2>Other swap items from this user</h2>
+                <div className="slider__wrapper">
+                    {otherListings.map((item) => (
+                        <Link key={item.id}
+                        href={`/listing-details/${item.id}`}
+                        className="slider__card"
+                    >
+                        <div className="slider__image--wrapper">
+                          <Image
+                                      src={listing.asset?.url || "/placeholder.jpg"}
+                                      alt={listing.title}
+                                      fill
+                                      className="listing__image"
+                                    ></Image>
+                        </div>
+                        <div className="slider__content">
+                            <h3>{item.title}</h3>
+                        </div>
+
+
+                    </Link>
+                       
+                    ) )}
+                </div>
+            </div>
+        )}
         </div>
         </>
     )

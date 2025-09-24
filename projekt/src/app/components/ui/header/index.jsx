@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import "./header.scss";
-import SignOutButton from "../signout-button";
+import SignOutButton from "../buttons/signout-button";
 import { FiUser } from "react-icons/fi"
 
 

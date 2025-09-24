@@ -35,8 +35,9 @@ export default function LoginForm() {
 	}, [formState, pending]);
 
 	return (
-        <div className="loginform__container">
-		<form action={formAction}>
+		<>
+		
+		<form action={formAction} className="login__form">
 			<div >
 				<label>
 					<span>Email</span>
@@ -62,6 +63,6 @@ export default function LoginForm() {
 
 			<ToastContainer />
 		</form>
-        </div>
+      </>
 	);
 }

@@ -1,21 +1,57 @@
 "use client";
 import "./profile-form.scss";
+import profileAction from "./profile-action";
+import { useState } from "react";
 
 export default function ProfileForm({ profileData } ) {
-   
-    return (
-        <div className="profileform__container">
-        <form>
+   const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+    const [success, setSuccess] = useState(false);
 
-            <div>
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        setError(null);
+        setSuccess(false);
+
+        const formData = new FormData(e.target);
+
+        try {
+            await profileAction(formData); 
+            setSuccess(true);
+        } catch (err) {
+            setError(err.message);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+
+    return (
+        //Kilde: fra undervisning. /Users/qlara/Desktop/coding/next/search-field/src/app/components/ui/forms/profil-form/index.jsx
+        <div className="profileform__container">
+        <form onSubmit={handleSubmit}>
+
+            <div >
                 <label>
                     <span>
-                        Username
+                        Email
                     </span>
-                    <input type="text" name="username" value={profileData.username} defaultValue/>
+                    <input type="email" name="email" defaultValue={profileData.email } />
                 </label>
-                <span></span>
+                <span>{state?.errors?.email}</span>
             </div>
+
+                    <div>
+                <label>
+                    <span>
+                        Password
+                    </span>
+                    <input type="password" name="password" defaultValue={profileData.password} />
+                </label>
+                <span>{state?.errors?.password}</span>
+            </div>
+
 
                 <div>
                 <label>
@@ -24,7 +60,7 @@ export default function ProfileForm({ profileData } ) {
                     </span>
                     <input type="text" name="firstname" defaultValue={profileData.firstname} />
                 </label>
-                <span></span>
+                <span>{state?.errors?.firstname}</span>
             </div>
 
                 <div>
@@ -34,21 +70,13 @@ export default function ProfileForm({ profileData } ) {
                     </span>
                     <input type="text" name="lastname" defaultValue={profileData.lastname} />
                 </label>
-                <span></span>
+                <span>{state?.errors?.lastname}</span>
             </div>
 
- 
 
-                       <div>
-                <label>
-                    <span>
-                        Profileimage
-                    </span>
-                    <input type="file" name="profileimage" accept="image/*" multiple />
-                </label>
-                <span></span>
-            </div>
-            <button type="submit"></button>
+            <button type="submit" disabled={loading}>
+                {loading ? "Updating..." : "Updating profile"}
+            </button>
         </form>
         </div>
     )

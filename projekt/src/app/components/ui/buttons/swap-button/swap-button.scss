@@ -1,15 +1,15 @@
-@import "../../../utils/variables";
+@import "../../../../utils/variables";
 
-.signout__button {
-      padding: 0.25rem 0.75rem;
+   .swap__button {
+            padding: 0.25rem 0.75rem;
             border: 1px solid $primary-color;
             background-color: $button-color;
             border-radius: 4px;
             text-decoration: none;
             color: inherit;
-          
+            max-width: 30%;
 
-            &:hover {
+             &:hover {
                 background-color: $hover-color;
             }
-}
+            }

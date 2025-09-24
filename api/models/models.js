@@ -37,11 +37,11 @@ Request.init({
 	offerItem: DataTypes.INTEGER
 }, { sequelize, modelName: "request" });
 
-Request.belongsTo(User, { foreignKey: "userId" });
-User.hasOne(Request, { foreignKey: "userId" });
+Request.belongsTo(User, { foreignKey: "userid" });
+User.hasOne(Request, { foreignKey: "userid" });
 
-Listing.belongsTo(User, { foreignKey: "userId" });
-User.hasMany(Listing, { foreignKey: "userId" });
+Listing.belongsTo(User, { foreignKey: "userid" });
+User.hasMany(Listing, { foreignKey: "userid" });
 
 Listing.belongsTo(Asset, { foreignKey: "assetId" });
 Asset.hasOne(Listing, { foreignKey: "assetId" });

@@ -16,7 +16,7 @@ async function createToken(req, res, next) {
 		}, process.env.JWT_SECRET, { expiresIn: "1h" });
 
 		res.json({
-			userId: user.id,
+			userid: user.id,
 			token,
 			validUntil: Date.now() + (60 * 60 * 1000)
 		});

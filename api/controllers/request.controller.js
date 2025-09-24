@@ -3,7 +3,7 @@ const { Request } = require("../models/models");
 async function createRequest(req, res, next) {
 	try {
 		await Request.create({
-			userId: req.fields.userid,
+			userid: req.fields.userid,
 			requestItem: req.fields.requestItem,
 			offerItem: req.fields.offerItem
 		});
@@ -18,7 +18,7 @@ async function getUserRequests(req, res, next) {
 	try {
 		let requestData = await Request.findAll({
 			where: {
-				userId: req.params.id
+				userid: req.params.id
 			}
 		});
 		res.json(requestData);

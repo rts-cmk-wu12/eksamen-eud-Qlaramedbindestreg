@@ -26,7 +26,7 @@ async function createSingleListing(req, res, next) {
 			title: req.fields.title,
 			description: req.fields.description,
 			assetId: req.fields.assetid,
-			userId: req.fields.userid,
+			userid: req.fields.userid,
 			categoryId: req.fields.categoryid
 		});
 		res.json(listingData);
