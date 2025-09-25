@@ -1,16 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import SearchProvider from "./components/providers/search-provider/search-provider";
+import { useContext, useEffect, useState } from "react";
+import SearchProvider, { searchContext} from "./components/providers/search-provider/search-provider";
 import SearchField from "./components/forms/search-form/search-field";
 import "./page.scss";
 import { FiSearch } from "react-icons/fi"
-import ReactPaginate from "react-paginate";
-import Image from "next/image";
-import Link from "next/link";
+import CategoryList from "./components/ui/category-list";
+
 
 export default function Home() {
  const [listings, setListings] = useState([]);
+
   const [currentPage, setCurrentPage] = useState(0);
   const listingsPerPage = 6;
 
@@ -28,64 +28,122 @@ export default function Home() {
  fetchListings();
  }, []);
 
-  const offset = currentPage * listingsPerPage;
-  const currentListings = listings.slice(offset, offset + listingsPerPage);
-  const pageCount = Math.ceil(listings.length / listingsPerPage);
+return (
+    <SearchProvider>
+      <SearchSection 
+      listings={listings} 
+      currentPage={currentPage} 
+      setCurrentPage={setCurrentPage} 
+      listingsPerPage={listingsPerPage} >
+      </SearchSection>
+    </SearchProvider>
+  );
+}
 
-  const handlePageClick = ({ selected }) => {
-    setCurrentPage(selected);
-  };
- 
+function SearchSection({ listings, currentPage, setCurrentPage, listingsPerPage }) {
+  const { results } = useContext(searchContext);
+
+const displayedList = results && results.length ? results : listings;
+
+const pageCount = Math.ceil(displayedList.length / listingsPerPage);
+const start = currentPage * listingsPerPage;
+const currentListings = displayedList.slice(start, start + listingsPerPage);
+
+  const handlePageClick = (pageIndex) => setCurrentPage(pageIndex);
+  const handlePrev = () => setCurrentPage(prev => Math.max(prev - 1, 0));
+  const handleNext = () => setCurrentPage(prev => Math.min(prev + 1, pageCount - 1));
+
   return (
-
-     // pagination kilde: https://github.com/AdeleD/react-paginate
-
-    <div className="home__container">
    
-        <SearchProvider>
-          <div className="search__wrapper">
-          <SearchField listings={listings}></SearchField>
-          <FiSearch className="search__icon"></FiSearch>
-          </div>
-          <div className="listing__grid">
-            {currentListings.map(listing => (
-              <div key={listing.id} className="listing__card">
-                <Link href={`/listing-details/${listing.id}`}>
-                <div className="listing__image-wrapper">
-                <Image
-                  src={listing.asset?.url || "/placeholder.jpg"}
-                  alt={listing.title}
-                  fill
-                  className="listing__image"
-                ></Image>
-                  </div>
-                <div className="listing__content">
-                  <h2>{listing.title}</h2>
-                </div>
-                </Link>
-              </div>
-            ))}
-          </div>
-     
-          <div className="pagination__wrapper">
-            <ReactPaginate
-                 previousLabel={"← Previous"}
-            nextLabel={"Next →"}
-            breakLabel={"..."}
-            pageCount={pageCount}
-            onPageChange={handlePageClick}
-            containerClassName={"pagination"}
-            activeClassName={"active"}
-            forcePage={currentPage}
-            marginPagesDisplayed={1}
-            pageRangeDisplayed={2}
-            ></ReactPaginate>
-          </div>
-      </SearchProvider>
- 
-       
+  
+    <div className="home__container">
+      <div className="filters__and__listings">
       
+        <div className="filters__panel">
+          <h3>Keywords</h3>
+
+          <div className="filter__section">
+           
+            <label>
+              <input type="checkbox" /> Label 
+            </label>
+            <label>
+              <input type="checkbox" /> Label 
+            </label>
+            <label>
+              <input type="checkbox" /> Label 
+            </label>
+          </div>
+
+          <div className="filter__section">
+            <p>Label</p>
+            <input type="range" min="0" max="100" value="50" readOnly />
+          </div>
+
+            <div className="filter__section">
+            <p>Color</p>
+            <label>
+              <input type="checkbox" /> Label 
+            </label>
+            <label>
+              <input type="checkbox" /> Label 
+            </label>
+            <label>
+              <input type="checkbox" /> Label 
+            </label>
+          </div>
+
+              <div className="filter__section">
+            <p>Size</p>
+            <label>
+              <input type="checkbox" /> Label 
+            </label>
+            <label>
+              <input type="checkbox" /> Label 
+            </label>
+            <label>
+              <input type="checkbox" /> Label 
+            </label>
+          </div>
+
+        </div>
+
+          
      
+        <div className="main__content">
+          <div className="search__wrapper">
+            <SearchField listings={listings} />
+            <FiSearch className="search__icon" />
+          </div>
+
+          <CategoryList listings={currentListings} />
+
+          {pageCount > 1 && (
+            <div className="pagination__wrapper">
+              <button onClick={handlePrev} disabled={currentPage === 0}>
+                ← Previous
+              </button>
+
+              {Array.from({ length: pageCount }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => handlePageClick(index)}
+                  className={index === currentPage ? "active" : ""}
+                >
+                  {index + 1}
+                </button>
+              ))}
+
+              <button
+                onClick={handleNext}
+                disabled={currentPage === pageCount - 1}
+              >
+                Next →
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

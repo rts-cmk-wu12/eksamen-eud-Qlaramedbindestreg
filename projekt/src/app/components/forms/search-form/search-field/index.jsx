@@ -2,10 +2,16 @@
 
 import { searchContext } from "@/app/components/providers/search-provider/search-provider";
 import { useContext } from "react";
+import { useEffect } from "react";
 
 export default function SearchField({ listings = [] }) {
 	const { setResults, setErrorMsg } = useContext(searchContext);
-
+    useEffect(() => {
+  if (listings.length) {
+    setResults(listings);
+  }
+}, [listings, setResults]);
+  
 	function searchHandler(event) {
 		setErrorMsg("");
 		const { value } = event.target;

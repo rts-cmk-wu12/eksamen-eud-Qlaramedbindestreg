@@ -9,8 +9,8 @@ export default async function loginAction(prevState, formData) {
     const { email, password } = Object.fromEntries(formData);
 
     const schema = z.object({
-        email: z.string().min(1, { message: "Du skal udfylde et brugernavn" }),
-        password: z.string().min(1, { message: "Du skal udfylde en adgangskode" })
+        email: z.string().min(1, { message: "Put in your username" }),
+        password: z.string().min(1, { message: "Put in your email" })
     });
 
     const validated = schema.safeParse({

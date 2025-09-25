@@ -42,7 +42,7 @@ export default function Header({ user }) {
            <Link
            href="/profile" className="profile__link">
             <FiUser size={24}></FiUser>
-            <span>Profile</span>
+           
            </Link>
 
            <div className="header__button">

@@ -37,7 +37,8 @@ export default async function ListingDetailsPage( {params} ) {
             <Image
             src={listing.asset?.url || "/placeholder.jpg"}
             alt={listing.title || "Listing image"}
-           fill
+            fill
+            className="details__image"
             ></Image>
             </div>
 
@@ -65,8 +66,8 @@ export default async function ListingDetailsPage( {params} ) {
                     >
                         <div className="slider__image--wrapper">
                           <Image
-                                      src={listing.asset?.url || "/placeholder.jpg"}
-                                      alt={listing.title}
+                                      src={item.asset?.url || "/placeholder.jpg"}
+                                      alt={item.title}
                                       fill
                                       className="listing__image"
                                     ></Image>
