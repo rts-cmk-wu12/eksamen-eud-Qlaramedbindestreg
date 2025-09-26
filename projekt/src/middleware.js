@@ -13,3 +13,4 @@ export default async function middleware(request) {
 export const config = {
 	matcher: ["/profile/:path*"]
 }
+// Kilde: fra undervisning: /Users/qlara/Desktop/coding/next/search-field/src/middleware.js

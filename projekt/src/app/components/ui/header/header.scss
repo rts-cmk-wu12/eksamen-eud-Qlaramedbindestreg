@@ -94,3 +94,90 @@
     }
 
 }
+
+@media (max-width: 1024px) {
+    .header {
+        padding: 0.5rem 1rem;
+        .header__left {
+            .header__title {
+                font-size: 0.9rem;
+            }
+        }
+        .header__right {
+            gap: 0.75rem;
+            .header__nav ul {
+                gap: 1rem;
+            }
+        }
+    }
+}
+.header__menu--toggle {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+    .header {
+        flex-wrap: wrap;
+       .header__right {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #fff;
+        border: 1px solid $grey-color;
+        border-radius: 0.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+        display: none;
+        &.open {
+            display: flex;
+        }
+
+        .header__nav ul {
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .header__button {
+            margin-top: 1rem;
+            width: 100%;
+
+            .header__signin {
+                display: block;
+                text-align: center;
+                width: 100%;
+            }
+        }
+       }
+        .header__menu--toggle {
+            display: block;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            margin-left: 1rem;
+            color: $primary-color;
+            z-index: 1000;
+      
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 0.5rem;
+        .header__left {
+            .header__logo img {
+                font-size: 28px;
+                height: auto;
+            }
+        }
+        .header__title {
+            font-size: 0.8rem;
+           
+        }
+    }
+}
+
+
+

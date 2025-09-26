@@ -5,21 +5,21 @@ Jeg har lavet valgfri opgave C
 
 ## Tech-stack 
 * Next.js
-Jeg har brugt Next.js som mit primære Framework. Det arbejder godt sammen med React, men Next er et full-stack framework, så de er bedre til at løse opgaven end kun React alene, da der mange serverside funktioner der skal bruges til at lave CRUD handlinger.
+Jeg har brugt Next.js som mit primære Framework. Det arbejder godt sammen med React, men Next er et full-stack framework, så de er bedre til at løse opgaven end kun React alene, da der er mange serverside funktioner der skal bruges til at lave CRUD handlinger.
 * React
-React er et Javascript bibliotek hvor man kan lave komponenter til at bygge bruger interfaces UI
+React er et Javascript bibliotek hvor man kan lave komponenter til at bygge bruger interfaces, UI.
 * Git
 Git er et open source system der bruges til at styre projekter og bruges til at sørge for ændringer der bliver lavet i kode, både så det ikke kun bliver stored lokalt, men også for at gøre det nemmere at samarbejde. Jeg har specifikt brugt GitHub til at hoste mit repository.
 * React-icons
 Et ikon-bibliotek hvor man kan importere ikoner direkte i sit react project uden at man behøver at downloade dem enkeltvist. Det samler mange forskellige ikon-biblioteker som man nemt kan refere til i sine imports.
 * SASS
-Et CSS extension der gør styling nemmere ved at man blandt andet kan neste værdier og laver genanvendelige variabler. Det er mere struktureret og overskueligt end almidelig CSS.
+En CSS extension der gør styling nemmere ved at man blandt andet kan neste værdier og laver genanvendelige variabler. Det er mere struktureret og overskueligt end almidelig CSS.
 * SwapHub API
 Rest API modtaget af skolen til at fetche og manipulere data. Understøtter CRUD handlinger (Create, read, update, delete ) via http anmodninger som POST, GET, PUT, DELETE. Håndterer også authenticate tokens. Giver blandt andet adgang til users, listings og newsletter.
 * Zod
 Et validerings bibliotek hvor man definerer scemaer til at validere data.
 * Toastify
-Bruges til at vise pop-up notifikationer i React. Bruges til success fejl og advarselsbeskeder. Jeg bruger den til login. 
+Bruges til at vise pop-up notifikationer i React. Bruges til success fejl og advarselsbeskeder. Jeg bruger den for eksempel til login. 
 
 Kilder:
 https://nextjs.org/docs
@@ -83,15 +83,25 @@ const currentListings = displayedList.slice(start, start + listingsPerPage);
   const handleNext = () => setCurrentPage(prev => Math.min(prev + 1, pageCount - 1));
 
 ```
-Jeg starter med at kalde useEffect som er en react hook. Den håndterer mit fetch, som er asynkron. Det er en sideløbende process som egentlig ikke har noget med vores hovedfunktion at gøre. Useeffect returnerer derfor ikke noget, men kan bruges som en indre asynkron funktion (altså useEffect i sig selv må ikke være asynkron, men den lader den indre funktion være det). Det er den jeg har kaldt fetchListings. Den kører en gang når komponentet mountes.
+Jeg starter med at kalde useEffect som er en react hook. Den håndterer mit fetch (datahentning fra API'er), som er asynkron. useEffect kører efter komponentet er blev rendered og har derfor som sådan egentlig ikke har noget med vores hovedfunktion at gøre. usEffect returnerer derfor ikke noget, men kan bruges som en indre asynkron funktion (altså useEffect i sig selv må ikke være asynkron, men den lader den indre funktion være det). 
+Det er den jeg har kaldt fetchListings. Den kører en gang når komponentet mountes, fordi mit dependency array er tomt. Hvis jeg havde props eller state deri, ville useEffect køre igen hver gang den ændrede sig (ved brugerinteraktion).
 
-Derefter henter jeg information fra API'et.
+I fetchListings henter jeg data fra API'et. Jeg kører mit fetch med et promise (await) om at koden kører når requested er færdigt. Jeg checker manualt res.ok om der er en error. Så await venter på fetch og res.ok checker status.
+const data = await.res.json() refererer til det data som mit api har returneret som json data. Fejl håndteres i try/catch.
+Hvis mit state returnerer dataen som forventet, renderer react resultaterne i setListings(data);
 
-Jeg kører mit fetch med et promise (await) om at koden kører når requested er færdigt. Jeg checker manualt res.ok om der er en error. Så await venter på fetch og res.ok checker status.
-const data = await.res.json() refererer til det data som mit api har returneret som json data. 
-Hvis mit state returnerer dataen som forventet, renderer react den data med fetchActivity();
+Min SearchSection bruger de hentede listings fra mit API. Hvis brugeren søger noget, viser results søgeresultaterne. Math.ceil beregner hvor mange sider der skal vises og er en del af min pagination. handlePageClick, handlePrev og handleNext styrer pagination mellem siderne som math.ceil har opdelt.
 
-Efter fetchListings bliver kaldt er der til sidst et tomt dependency array som fortæller react at effekten skal køre igen når dataen har ændret sig. 
-Jeg har gjort projektet klar til at blive skaleret ved at bruge BEM navngivningskonventioner, lavet selvdokumenterende kode ved at komme komponenter i mapper der giver et nemmere overblik og ved at lave SCSS variabler der nemt kan genbruges.
+Jeg har gjort projektet klar til at blive skaleret ved at bruge BEM navngivningskonventioner, lavet selvdokumenterende kode ved at give komponenter letoverskuelige navne og komme dem i mapper der giver et nemmere overblik og ved at lave SCSS variabler der nemt kan genbruges.
 
-Min SearchSection bruger igen listings som jeg har hentet fra mit API. Hvis brugeren søger noget, viser results søgeresultaterne, hvis ikke vises alt det useEffect hentede.
+Kilder:
+https://react.dev/reference/react/useEffect
+https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Async_JS/Promises
+https://getbem.com/introduction/
+https://react.dev/reference/react/useContext
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
+https://react.dev/learn/rendering-lists
+
+

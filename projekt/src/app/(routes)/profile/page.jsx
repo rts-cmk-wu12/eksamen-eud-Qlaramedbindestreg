@@ -12,3 +12,5 @@ export default function ProfilePage() {
         </>
     )
 }
+
+// Kilde: fra undervisning. /Users/qlara/Desktop/coding/next/search-field/src/app/(routes)/profil/page.jsx

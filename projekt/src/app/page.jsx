@@ -147,3 +147,5 @@ const currentListings = displayedList.slice(start, start + listingsPerPage);
     </div>
   );
 }
+
+// Kilde: https://react.dev/reference/react/useContext & https://react.dev/reference/react/createContext#provider & https://react.dev/learn/passing-props-to-a-component & https://developer.mozilla.org/en-US/docs/Glossary/Hoisting

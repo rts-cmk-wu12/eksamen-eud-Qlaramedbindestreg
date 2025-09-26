@@ -2,7 +2,6 @@
 import "./profile-form.scss";
 
 
-
 export default function ProfileForm({ profileData } ) {
    
    const displayData = profileData || {
@@ -18,8 +17,7 @@ export default function ProfileForm({ profileData } ) {
     };
 
     return (
-        //Kilde: fra undervisning. /Users/qlara/Desktop/coding/next/search-field/src/app/components/ui/forms/profil-form/index.jsx
-        <div className="profileform__container">
+       <div className="profileform__container">
         <form onSubmit={handleSubmit}>
 
             <div >
@@ -71,3 +69,5 @@ export default function ProfileForm({ profileData } ) {
         </div>
     )
 }
+
+  //Kilder: fra undervisning. /Users/qlara/Desktop/coding/next/search-field/src/app/components/ui/forms/profil-form/index.jsx & event handlers for handleSubmit https://react.dev/learn/responding-to-events 

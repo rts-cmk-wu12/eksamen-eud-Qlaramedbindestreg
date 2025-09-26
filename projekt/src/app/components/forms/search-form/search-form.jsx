@@ -4,7 +4,7 @@ import { useActionState, useEffect } from "react";
 import SearchAction from "./search-action";
 
 export default function SearchForm() {
-    //Kilde: Fra undervisning. 
+
     const [formState, formAction, pending] = useActionState(SearchAction);
 
     useEffect(function() {
@@ -35,3 +35,5 @@ export default function SearchForm() {
 
     );
 }
+//Kilde: Fra undervisning. /Users/qlara/Desktop/coding/next/search-field/src/app/components/ui/forms/search-form/search-form.jsx
+

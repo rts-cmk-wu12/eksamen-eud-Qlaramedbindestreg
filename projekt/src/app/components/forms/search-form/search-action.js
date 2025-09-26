@@ -1,7 +1,5 @@
 "use server";
 
-
-
 export default async function SearchAction(prevState, formData) {
 
     const { keyword } = Object().fromEntries(formData);
@@ -27,3 +25,6 @@ const filteredData = listings.filter(listing =>
 	return filteredData;
 
 }
+
+// Kilde: Fra undervisning: /Users/qlara/Desktop/coding/next/search-field/src/app/components/ui/forms/search-form/search-action.js
+

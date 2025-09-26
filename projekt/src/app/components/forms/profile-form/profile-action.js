@@ -4,7 +4,6 @@ import { cookies } from "next/headers";
 import z from "zod";
 
 export default async function profileAction(prevState, formData) {
-    //Kilde: Fra undervisning. /Users/qlara/Desktop/coding/next/search-field/src/app/components/ui/forms/profil-form/profile-action.js
     const { email, password, firstname, lastname, age } = Object.fromEntries(formData);
 
     const schema = z.object({
@@ -58,3 +57,6 @@ export default async function profileAction(prevState, formData) {
     }
     return true ;
 }
+
+ //Kilde: Fra undervisning. /Users/qlara/Desktop/coding/next/search-field/src/app/components/ui/forms/profil-form/profile-action.js
+   

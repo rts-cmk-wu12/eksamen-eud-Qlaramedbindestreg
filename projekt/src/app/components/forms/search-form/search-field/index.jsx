@@ -43,3 +43,4 @@ export default function SearchField({ listings = [] }) {
 		</div>
 	);
 }
+// Fra undervisning. /Users/qlara/Desktop/coding/next/search-field/src/app/components/ui/forms/search-form/search-field/index.jsx

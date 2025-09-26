@@ -2,15 +2,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import "./listing-details.scss";
-import SwapButton from "@/app/components/ui/buttons/swap-button"; 
+import ListingDetailsClient from "./listingDetailsClient";
 import { cookies } from "next/headers";
 
-
 export default async function ListingDetailsPage( {params} ) {
-    //Kilder: fra undervisning. /Users/qlara/Desktop/coding/next/search-field/src/app/(routes)/search/search-two.jsx
-    //Dynamic routes https://nextjs.org/docs/pages/building-your-application/routing/dynamic-routes & fra undervisning /Users/qlara/Desktop/coding/next/next-repetition/src/app/(routes)/dashboard/update/[kageid]/page.jsx
-    //Dynamic API and params: https://nextjs.org/docs/messages/sync-dynamic-apis & https://nextjs.org/docs/app/api-reference/file-conventions/page
-    const { id } = params;
+   const { id } = params;
+
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/listings/${id}`);
 	if (!response.ok) {
         return <div>Listing ikke fundet</div>;
@@ -19,12 +16,12 @@ export default async function ListingDetailsPage( {params} ) {
 
     const cookieStore = cookies();
     const token = cookieStore.get("sh_token")?.value;
+    const userid = (await cookieStore).get("sh_userid")?.value;
 
     let otherListings = [];
-    if (listing.userId) {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/listings?userId/${listing.userId}&exclude=${id}`
+    if (listing.userid) {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/listings?userId=${listing.userId}&exclude=${id}`);
 
-        );
         if (res.ok) otherListings = await res.json();
     }
 
@@ -41,17 +38,12 @@ export default async function ListingDetailsPage( {params} ) {
             className="details__image"
             ></Image>
             </div>
+            <ListingDetailsClient 
+            listing={listing} 
+            token={token} 
+            userid={userid} ></ListingDetailsClient>
 
-            <div className="details__content">
-            <h1>{listing.title}</h1>
-            <p>{listing.description}</p>
-           {token && <SwapButton
-           requestItemId={listing.id}
-           myItemsId={1}
-           userid={(await cookieStore).get("sh_userid")?.value}
-           token={token}
-           ></SwapButton>}
-            </div>
+
 
         </div>
 
@@ -87,3 +79,7 @@ export default async function ListingDetailsPage( {params} ) {
         </>
     )
 }
+//Kilder: fra undervisning. /Users/qlara/Desktop/coding/next/search-field/src/app/(routes)/search/search-two.jsx
+//Dynamic routes https://nextjs.org/docs/pages/building-your-application/routing/dynamic-routes & fra undervisning /Users/qlara/Desktop/coding/next/next-repetition/src/app/(routes)/dashboard/update/[kageid]/page.jsx
+//Dynamic API and params: https://nextjs.org/docs/messages/sync-dynamic-apis & https://nextjs.org/docs/app/api-reference/file-conventions/page
+  

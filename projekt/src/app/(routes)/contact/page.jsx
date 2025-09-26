@@ -117,3 +117,4 @@ export default function ContactPage() {
         </>
     )
 }
+// Kilde: Fra undervisning om http metoder, blandt andet: /Users/qlara/Desktop/coding/next/next-repetition/src/actions/create-kageperson.js

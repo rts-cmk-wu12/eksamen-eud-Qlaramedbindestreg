@@ -1,68 +1,102 @@
 "use client";
-
-import { useActionState, useEffect } from "react";
-import loginAction from "./login-action";
-import { redirect } from "next/navigation";
+import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useRouter } from "next/navigation";
 import "./login-form.scss";
-import Link from "next/link";
 
+export default function LoginForm({ onLogin }) {
+  const [isPending, setIsPending] = useState(false);
+  const router = useRouter();
 
-export default function LoginForm() {
-	const [formState, formAction, pending] = useActionState(loginAction);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setIsPending(true);
 
-	useEffect(function () {
-       pending ? toast.loading("Logger ind...", { toastId: "loader"}) : toast.dismiss();
+    const formData = new FormData(event.target);
+    const email = formData.get("email");
+    const password = formData.get("password");
 
-		if (formState?.success) {
-			toast.update("loader", {
-                toastId: "loader",
-				render: "Du er nu logget ind!",
-				type: "success",
-				isLoading: false,
-				closeOnClick: false,
-				autoClose: 2000,
-				hideProgressBar: true,
-				position: "top-right"
-			});
-            setTimeout(function() {
-                redirect("/")
-            }, 2000);
-		}
+    try {
+      const response = await fetch(
+        process.env.NEXT_PUBLIC_API_AUTH_URL || "http://localhost:4000/auth/token", 
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password }),
+        }
+      );
 
+      if (!response.ok) {
+        throw new Error("Wrong email or password");
+      }
+
+      const data = await response.json();
       
-	
-	}, [formState, pending]);
+   
+      localStorage.setItem('sh_token', data.token);
+      localStorage.setItem('sh_userid', data.userId);
+      localStorage.setItem('sh_email', email);
+      
+      
+      window.dispatchEvent(new Event('storage'));
+      
 
-	return (
-		<>
-		
-		<form action={formAction} className="login__form">
-			<div >
-				<label>
-					<span>Email</span>
-					<input type="text" name="email" defaultValue={formState?.data?.email} />
-					<span>{formState?.properties?.email?.errors}</span>
-				</label>
-			</div>
-			<div>
-				<label>
-					<span>Password</span>
-					<input type="password" name="password" defaultValue={formState?.data?.password} />
-					<span>{formState?.properties?.password?.errors}</span>
-				</label>
-			</div>
-			<div>{formState?.errors}</div>
-			<button type="submit">Sign in</button>
-            <Link
-            href={""}
-            className="forgot__password"
-            >
-            Forgot password?
-            </Link>
+      toast.success("Logged in successfully!");
+      
+      onLogin?.({ email, userid: data.userId, token: data.token });
+      
+    
+      setTimeout(() => {
+        router.push("/");
+      }, 1500); 
 
-			<ToastContainer />
-		</form>
-      </>
-	);
+    } catch (err) {
+      console.error("Login error:", err);
+      toast.error(err.message);
+      setIsPending(false);
+    }
+  };
+
+  return (
+    <>
+      <form onSubmit={handleSubmit} className="login__form">
+		<label >
+			<span>Email</span>
+        <input 
+          type="email" 
+          name="email" 
+          placeholder="Email" 
+          required 
+          defaultValue="priya.patel@swaphub.test" 
+        />
+
+        </label>
+    <label >
+		<span>Password</span>
+        <input 
+          type="password" 
+          name="password" 
+          placeholder="Password" 
+          required 
+          defaultValue="password1234" 
+        />
+		</label>
+        
+        <button type="submit" disabled={isPending}>
+          {isPending ? "Signing in..." : "Sign in"}
+        </button>
+      </form>
+      
+      <ToastContainer 
+        position="top-right"
+        autoClose={2000} 
+        hideProgressBar={false}
+        closeOnClick
+        pauseOnHover
+      />
+    </>
+  );
 }
+
+// Kilder: fra undervisning. /Users/qlara/Desktop/coding/next/search-field/src/app/components/ui/forms/login-form/index.jsx & https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent & https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage & https://developer.mozilla.org/en-US/docs/Web/API/FormData & https://nextjs.org/docs/app/api-reference/functions/use-router

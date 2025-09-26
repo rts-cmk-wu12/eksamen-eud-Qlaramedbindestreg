@@ -1,70 +1,44 @@
 "use server";
-
 import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
 import z from "zod";
+import { redirect } from "next/navigation";
 
 export default async function loginAction(prevState, formData) {
-    //Kilde: fra undervisning. /Users/qlara/Desktop/coding/next/search-field/src/app/components/ui/forms/login-form/login-action.js
-    const { email, password } = Object.fromEntries(formData);
+  const email = formData.get("email");
+  const password = formData.get("password");
 
-    const schema = z.object({
-        email: z.string().min(1, { message: "Put in your username" }),
-        password: z.string().min(1, { message: "Put in your email" })
-    });
+  const schema = z.object({
+    email: z.string().min(1, { message: "Email must be filled out" }),
+    password: z.string().min(1, { message: "Password must be filled out" })
+  });
 
-    const validated = schema.safeParse({
-        email,
-        password
-    });
+  const validated = schema.safeParse({ email, password });
 
-    if (!validated.success) return {
-        ...validated,
-        ...z.treeifyError(validated.error),
-        data: {
-            email,
-            password
-        }
-    }
-
-    const response = await fetch(`${process.env.API_AUTH_URL}`, {
-        method: "POST",
-        headers: {
-            "content-type": "application/json"
-        },
-        body: JSON.stringify({
-            email: validated.data.email,
-            password: validated.data.password
-        })
-    });
-
-    if (!response.ok) return {
-        success: false,
-        errors: ["Forkert e-mail eller adganskode"],
-        data: {
-            email,
-            password
-        }
-    }
-
-    const json = await response.json();
-
-    const cookieStore = await cookies();
-
-    cookieStore.set({
-        name: "sh_token",
-        value: json.token,
-        path: "/",
-        httpOnly: true,
-    });
-
-    cookieStore.set({
-        name: "sh_userid",
-        value: String(json.userid),
-
-    });
+  if (!validated.success) {
+    return {
+      ...validated,
+      ...z.treeifyError(validated.error)
+    };
+  }
 
 
+  const response = await fetch(process.env.API_AUTH_URL || "http://localhost:4000/auth/token", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, password })
+  });
 
-    redirect("/");
+  if (!response.ok) {
+    return { errors: ["Wrong email or password"] };
+  }
+
+  const data = await response.json();
+
+  const cookieStore = await cookies();
+  cookieStore.set("sh_token", data.token, { path: "/" });
+  cookieStore.set("sh_userid", String(data.userid), { path: "/" }); 
+
+  redirect("/");
 }
+
+//Kilde: fra undervisning. /Users/qlara/Desktop/coding/next/search-field/src/app/components/ui/forms/login-form/login-action.js

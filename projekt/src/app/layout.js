@@ -4,7 +4,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { cookies } from "next/headers";
 
-const interSans = Inter({
+const inter = Inter({
   variable: "--font-inter-sans",
   subsets: ["latin"],
 });
@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
    const user = token ? { token: token.value } : null;
   return (
     <html lang="en">
-      <body className={`${interSans.variable}`}>
+      <body className={`${inter.variable}`}>
         <Header use={user}></Header>
         {children}
         <Footer></Footer>

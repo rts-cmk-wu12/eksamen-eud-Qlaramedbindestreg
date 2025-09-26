@@ -4,7 +4,7 @@ import "./register.scss";
 import { useState } from "react";
 import { toast } from "react-toastify";
 
-export default function RegisterForm() {
+export default function Register() {
     const [form, setForm] = useState({
         firstName:"",
         lastName: "",
@@ -55,16 +55,23 @@ export default function RegisterForm() {
             <h1>Create an account</h1>
             <form onSubmit={handleSubmit} className="register__form">
                 <input type="text" name="firstName" placeholder="First Name" value={form.firstName} onChange={handleChange}/>
+
                 <input type="text" name="lastName" placeholder="Last Name" value={form.lastName} onChange={handleChange}/>
+
                 <input type="email" name="email" placeholder="Email" value={form.email} onChange={handleChange}/>
+
                 <input type="password" name="password" placeholder="Password" value={form.password} onChange={handleChange}/>
+
                 <input type="password" name="confirmPassword" placeholder="Confirm Password" value={form.confirmPassword} onChange={handleChange}/>
+
                <button type="submit" disabled={loading}>{loading ? "Creating" : "Create Account"}</button>
 
             </form>
 
-
+     
         </>
     )
 
 }
+
+// Kilde: fra undervisning. /Users/qlara/Desktop/coding/next/search-field/src/app/components/ui/forms/login-form/index.jsx

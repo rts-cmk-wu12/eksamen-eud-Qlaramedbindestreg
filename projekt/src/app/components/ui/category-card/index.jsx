@@ -1,3 +1,4 @@
+// Kilde: Fra undervisning: /Users/qlara/Desktop/coding/next/search-field/src/app/components/ui/activity-card.jsx/index.jsx
 import Image from "next/image";
 import Link from "next/link";
 
